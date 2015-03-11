@@ -1,0 +1,852 @@
+﻿/* -----------------------------------------------------------------------------
+
+	TABLE OF CONTENTS
+
+	1.) General
+	2.) Components
+	3.) Header
+	4.) Body / Wrapper
+	5.) Core
+	6.) Page Sidebar
+	7.) Bottom Panel
+	8.) Footer
+	9.) Main Sidebar
+	10.) Responsive
+
+----------------------------------------------------------------------------- */
+
+/* -----------------------------------------------------------------------------
+
+    1.) GENERAL
+
+----------------------------------------------------------------------------- */
+
+	/* -------------------------------------------------------------------------
+		COLORS
+	-------------------------------------------------------------------------- */
+
+	// MAIN PALETTE
+	$accent-1: #34d5a7; // primary accent color
+	$accent-2: #4a7eda; // secondary accent color
+	$x-soft-gray: #eeeeee; // very soft backgrounds
+	$soft-gray: #e1e1e1; // dividers
+	$medium-gray: #d0d0d0; // soft background
+	$dark-gray: #3f3f3f; // titles, strong text
+	$x-dark-gray: #1a1a1a; // titles, strong text on bright bg
+
+	// GENERAL
+	$body-bg: $accent-2;
+	$body-font: #494949;
+	$link: $accent-1;
+
+	// HEADER
+	$header-bg-image: '../../../images/header_bg.jpg';
+	$header-font: #FFF;
+	$header-submenu-bg: #FFF;
+	$header-submenu-font: #3f3f3f;
+	$fixed-header-bg: #161616;
+	$fixed-header-font: #FFF;
+	$fixed-header-submenu-bg: #161616;
+	$fixed-header-submenu-font: #FFF;
+
+	// BODY / WRAPPER
+	$wrapper-bg: #FFF;
+
+	// MAIN SIDEBAR
+	$ms-bg: #161616;
+	$ms-title: #FFF;
+	$ms-font: #FFF;
+	$ms-soft-gray: #2e2e2e;
+	$ms-medium-gray: #404040;
+
+	// BOTTOM PANEL
+	$bp-bg: #161616;
+	$bp-title: #FFF;
+	$bp-font: #FFF;
+	$bp-soft-gray: #2e2e2e;
+	$bp-medium-gray: #404040;
+
+
+	/* -------------------------------------------------------------------------
+		MIXINS
+	-------------------------------------------------------------------------- */
+
+	// BOX SHADOW
+	@mixin box-shadow ( $shadow1, $shadow2:false ) {
+		$params: $shadow1;
+		@if $shadow2 { $params: $shadow1, $shadow2; }
+		-moz-box-shadow: $params;
+		-webkit-box-shadow: $params;
+		box-shadow: $params;
+	}
+
+	// DOTS PAGINATION
+	@mixin dots-pagination {
+		.owl-page { border-color: $accent-1; }
+		.owl-page.active,
+		.owl-page:hover { background-color: $accent-1; }
+	}
+
+	// HORIZONTAL GRADIENT
+	@mixin horizontal-gradient( $from, $to ) {
+		background-image: -webkit-gradient( linear, left top, right top, from( $from ), to( $to ) );
+		background-image: -webkit-linear-gradient( left, $from, $to );
+		background-image:    -moz-linear-gradient( left, $from, $to );
+		background-image:      -o-linear-gradient( left, $from, $to );
+		background-image:         linear-gradient( to right, $from, $to );
+	}
+
+	// INPUT PLACEHOLDER
+	@mixin input-placeholder ( $color ) {
+		&::-webkit-input-placeholder { color: $color; }
+		&:-moz-placeholder { color: $color; }
+		&::-moz-placeholder { color: $color; }
+		&:-ms-input-placeholder { color: $color; }
+	}
+
+	// TEXT SHADOWS
+	@mixin text-shadow-dark {
+		text-shadow: 0 1px 0 rgba(0,0,0,0.15);
+	}
+	@mixin text-shadow-light {
+		text-shadow: 0 1px 0 rgba(255,255,255,0.15);
+	}
+
+	// VERTICAL GRADIENT
+	@mixin vertical-gradient( $from, $to ) {
+		background-image: -webkit-gradient( linear, left top, left bottom, from( $from ), to( $to ) );
+		background-image: -webkit-linear-gradient( top, $from, $to );
+		background-image:    -moz-linear-gradient( top, $from, $to );
+		background-image:      -o-linear-gradient( top, $from, $to );
+		background-image:         linear-gradient( to bottom, $from, $to );
+	}
+	@mixin vertical-gradient-from-bottom( $from, $to ) {
+		background-image: -webkit-gradient( linear, left bottom, left top, from( $from ), to( $to ) );
+		background-image: -webkit-linear-gradient( bottom, $from, $to );
+		background-image:    -moz-linear-gradient( bottom, $from, $to );
+		background-image:      -o-linear-gradient( bottom, $from, $to );
+		background-image:         linear-gradient( to top, $from, $to );
+	}
+
+	/* -------------------------------------------------------------------------
+		DEFAULTS
+	------------------------------------------------------------------------- */
+
+	body { color: $body-font; background-color: $body-bg; }
+	a, a:hover, a:active, a:focus { color: $accent-1; }
+	a:hover { border-color: $accent-1; }
+
+	/* -------------------------------------------------------------------------
+        VARIOUS CONTENT / TYPOGRAPHY
+	------------------------------------------------------------------------- */
+
+	.various-content  {
+
+		h1, h2, h3, h4, h5 { color: $dark-gray; }
+
+		// UNORDERED LIST
+		ul > li:before { background-color: $dark-gray; }
+		ul ul > li:before { background-color: $medium-gray; }
+
+		// TABLE
+		table th { border-color: $x-soft-gray; }
+		table.m-alternate tbody > tr:nth-child(even) { background-color: $x-soft-gray; }
+
+	}
+
+	// STANDALONE HEADINGS
+	.heading-2 { color: $dark-gray; }
+
+	/* -------------------------------------------------------------------------
+		FORMS
+	------------------------------------------------------------------------- */
+
+	.default-form {
+
+		label { color: $dark-gray; }
+		label > span { color: $accent-1; }
+		input, textarea, select, .selectbox-input .toggle { color: $body-font; background-color: $x-soft-gray; }
+		input.m-type-2, textarea.m-type-2, select.m-type-2 { border-color: $soft-gray; background-color: transparent; }
+		input.m-error, textarea.m-error, select.m-error { @include box-shadow( inset 0 0 0 3px #ffdfe0 ); }
+
+		// CHECKBOX & RADIO INPUTS
+		.checkbox-input, .radio-input {
+			label { color: $body-font; }
+			label:before { color: $medium-gray; }
+			&.m-checked label:before { color: $accent-1; }
+		}
+
+		// SELECTBOX INPUT
+		.selectbox-input {
+			.toggle:after { color: $accent-1; }
+			.fake-selectbox { background-color: $x-soft-gray; @include box-shadow( 0 3px 3px rgba( #000, .1 ) ); }
+			.fake-selectbox > li:hover { color: #FFF; background-color: $accent-1; }
+		}
+
+	}
+
+
+/* -----------------------------------------------------------------------------
+
+    2.) COMPONENTS
+
+----------------------------------------------------------------------------- */
+
+	/* -------------------------------------------------------------------------
+		ACCORDION
+	------------------------------------------------------------------------- */
+
+	.various-content .c-accordion,
+	.c-accordion {
+		> li { border-color: $x-soft-gray; }
+		.accordion-title { color: $dark-gray; }
+		.accordion-title:before { color: $accent-1; }
+		.accordion-price { color: $accent-1; }
+		.accordion-price .sale-price { color: $accent-2; }
+		.accordion-price .strikethrough { color: $body-font; }
+	}
+
+	/* -------------------------------------------------------------------------
+		ALERT MESSAGES
+	------------------------------------------------------------------------- */
+
+	.c-alert-message { border-color: $wrapper-bg; }
+	.c-alert-message.m-warning { color: #d40041; background-color: #ffdfe0; @include box-shadow( 0 0 0 5px #ffdfe0 ); }
+	.c-alert-message.m-success { color: #499143; background-color: #d4fbd3; @include box-shadow( 0 0 0 5px #d4fbd3 ); }
+	.c-alert-message.m-info { color: #265e88; background-color: #e1edf9; @include box-shadow( 0 0 0 5px #e1edf9 ); }
+	.c-alert-message.m-notification { color: #c88435; background-color: #fff4cf; @include box-shadow( 0 0 0 5px #fff4cf ); }
+
+	/* -------------------------------------------------------------------------
+		BLOG
+	------------------------------------------------------------------------- */
+
+	.c-blog {
+
+		.article-inner { border-color: $x-soft-gray; }
+		.article-quote { border-color: $soft-gray; }
+		.article-quote blockquote p { color: $dark-gray; }
+		.article-link:before,
+		article.link .article-title:before { color: $soft-gray; }
+		.article-footer { border-color: $x-soft-gray; }
+		.article-info > li:before { color: $medium-gray; background: none; }
+
+		// BLOG TOOLS
+		.blog-filter > li > button { color: $medium-gray; }
+		.blog-filter > li > button:hover,
+		.blog-filter > li > button.m-active { color: $accent-1; }
+
+	}
+
+	/* -------------------------------------------------------------------------
+		BUTTONS
+	------------------------------------------------------------------------- */
+
+	.c-button { color: #FFF; border-color: $accent-1; background-color: $accent-1;
+
+		&:hover, &:active { color: #FFF; }
+		&:hover:not( .m-disabled ), &:active:not( .m-disabled ) { color: $accent-1; background-color: transparent; }
+
+		&.m-color-2 { border-color: $accent-2; background-color: $accent-2; }
+		&.m-color-2:hover:not( .m-disabled ),
+		&.m-color-2:active:not( .m-disabled ) { color: $accent-2; background-color: transparent; }
+		&.m-color-3 { border-color: $dark-gray; background-color: $dark-gray; }
+		&.m-color-3:hover:not( .m-disabled ),
+		&.m-color-3:active:not( .m-disabled ) { color: $dark-gray; background-color: transparent; }
+
+		// OUTLINED
+		&.m-outline { color: $accent-1; border-color: $accent-1; background-color: transparent; }
+		&.m-outline:hover:not( .m-disabled ),
+		&.m-outline:active:not( .m-disabled ) { color: #FFF; background-color: $accent-1; }
+		&.m-outline.m-color-2 { color: $accent-2; border-color: $accent-2; }
+		&.m-outline.m-color-2:hover:not( .m-disabled ),
+		&.m-outline.m-color-2:active:not( .m-disabled ) { color: #FFF; background-color: $accent-2; }
+		&.m-outline.m-color-3 { color: $dark-gray; border-color: $dark-gray; }
+		&.m-outline.m-color-3:hover:not( .m-disabled ),
+		&.m-outline.m-color-3:active:not( .m-disabled ) { color: #FFF; background-color: $dark-gray; }
+
+	}
+
+	/* -------------------------------------------------------------------------
+		COUNTER
+	------------------------------------------------------------------------- */
+
+	.c-counter .counter-value { color: $accent-1; }
+
+	/* -------------------------------------------------------------------------
+		CTA MESSAGE
+	------------------------------------------------------------------------- */
+
+	.c-cta-message { background-color: $x-soft-gray; }
+
+	/* -------------------------------------------------------------------------
+		DIVIDER
+	------------------------------------------------------------------------- */
+
+	.c-divider { border-color: $x-soft-gray; }
+	.c-divider.m-transparent { border-color: transparent; }
+
+	/* -------------------------------------------------------------------------
+		GALLERY
+	------------------------------------------------------------------------- */
+
+	.c-gallery {
+
+		// ITEM LIST
+		.item-list { background-color: $x-soft-gray; }
+		&.m-no-bg .item-list { background-color: transparent; }
+		&.m-frames .item-list { background-color: transparent; border-color: $wrapper-bg; }
+		&.m-frames .item-list > .item { border-color: $wrapper-bg; }
+		.item-list .item-image:after { background-color: $accent-1; background-color: rgba( $accent-1, .9 ); }
+		.item-list .m-video .item-image:before,
+		.item-list .item-image.lightbox-video:before { color: #FFF; color: rgba( #FFF, .5 ); }
+		.item-list .item.m-overlay-ico:after { color: #FFF; }
+		.item-list .item-info { color: #FFF; }
+		.item-list .item-info h4,
+		.item-list .item-info h4 a { color: #FFF; }
+		.item-list .item-info h4:after { background-color: #FFF; }
+		.item-list .item-tools > * { color: #FFF; }
+		.item-list .item-tools > *:hover { color: $accent-1; background-color: #FFF; }
+
+		// GALLERY TOOLS
+		.gallery-tools,
+		.gallery-tools:first-child { border-color: $x-soft-gray; }
+		.gallery-filter > li > button { color: $medium-gray; }
+		.gallery-filter > li > button:hover,
+		.gallery-filter > li > button.m-active { color: $accent-1; }
+
+		.gallery-tools-top { border-color: $x-soft-gray; }
+
+	}
+
+	/* -------------------------------------------------------------------------
+		ICON BLOCK
+	------------------------------------------------------------------------- */
+
+	.c-icon-block {
+		> .fa { color: $accent-1; }
+		h3 { color: $dark-gray; }
+	}
+
+	/* -------------------------------------------------------------------------
+		LOADING ANIM
+	------------------------------------------------------------------------- */
+
+	.c-loading-anim { background-color: $medium-gray;
+		> span { background-image: url( "../../img/loader_2x.gif" );
+			filter: progid:DXImageTransform.Microsoft.AlphaImageLoader( src='../../img/loader_2x.gif', sizingMethod='scale');
+			-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader( src='../../img/loader_2x.gif', sizingMethod='scale')";
+		}
+	}
+
+	/* -------------------------------------------------------------------------
+		MODAL
+	------------------------------------------------------------------------- */
+
+	.c-modal { background-color: rgba( $accent-1, .8 ); @include vertical-gradient( rgba( $accent-2, .8 ), transparent );
+		.modal-loading .c-loading-anim { background-color: transparent; }
+		.modal-box { background-color: $wrapper-bg; }
+		.modal-header { border-color: $x-soft-gray; }
+		.modal-title h1,
+		.modal-title h1 a { color: $dark-gray; }
+	}
+
+	/* -------------------------------------------------------------------------
+		PAGINATION
+	------------------------------------------------------------------------- */
+
+	.c-pagination {
+		.c-button { border-color: $x-soft-gray; }
+		.c-button:hover { border-color: $accent-1; }
+		.m-active .c-button { color: #FFF; border-color: $accent-1; background-color: $accent-1; }
+	}
+	.c-pagination.m-ajaxed {
+		.c-button { border-color: $accent-1; }
+		.c-button.m-loading { color: #FFF; background-color: $accent-1; }
+	}
+
+	/* -------------------------------------------------------------------------
+		PARALLAX SECTION
+	------------------------------------------------------------------------- */
+
+	.various-content .c-parallax-section,
+	.c-parallax-section { border-color: $wrapper-bg;
+		.section-inner { color: #FFF; background-color: rgba( #000, .5 ); }
+		.section-header h2 { color: #FFF; }
+		.section-header h2:after { background-color: $accent-1; }
+		.c-button { color: #FFF; }
+	}
+
+	/* -------------------------------------------------------------------------
+		PRICING TABLE
+	------------------------------------------------------------------------- */
+
+	.various-content .c-pricing-table,
+	.c-pricing-table { border-color: $x-soft-gray;
+		.table-price { color: $accent-1; }
+		.table-price > span { color: $dark-gray; }
+		.table-content ul > li { border-color: $x-soft-gray; }
+	}
+
+	/* -------------------------------------------------------------------------
+		PROGRESS BAR
+	------------------------------------------------------------------------- */
+
+	.c-progress-bar { background-color: $x-soft-gray; }
+	.c-progress-bar > span { background-color: $accent-1; }
+	.c-progress-bar.m-color-2 > span { background-color: $accent-2; }
+	.c-progress-bar.m-color-3 > span { background-color: $dark-gray; }
+
+	/* -------------------------------------------------------------------------
+		SEARCH FORM
+	------------------------------------------------------------------------- */
+
+	.c-search-form {
+		.form-fields { border-color: $x-soft-gray; }
+		input { color: $dark-gray; }
+	}
+
+	/* -------------------------------------------------------------------------
+		SECTION
+	------------------------------------------------------------------------- */
+
+	section {
+		.section-header h2 { color: $dark-gray; }
+		.section-header h2:after { background-color: $accent-1; }
+	}
+
+	/* -------------------------------------------------------------------------
+		SERVICE
+	------------------------------------------------------------------------- */
+
+	.c-service { border-color: $soft-gray;
+		.service-ico { color: #FFF; background-color: $accent-1; border-color: $wrapper-bg; }
+		h3 { color: $dark-gray; }
+	}
+
+	/* -------------------------------------------------------------------------
+		SLIDER
+	------------------------------------------------------------------------- */
+
+	.c-slider {
+
+		.slide { color: #FFF; }
+		h1, h2, h3, h4 { color: #FFF; }
+		.c-button { color: $dark-gray; border-color: #FFF; background-color: #FFF;
+			&:hover, &:active { color: $dark-gray; }
+			&:hover:not( .m-disabled ), &:active:not( .m-disabled ) { color: #FFF; background-color: transparent; }
+			&.m-outline { color: #FFF; border-color: #FFF; background-color: transparent; }
+			&.m-outline:hover:not( .m-disabled ),
+			&.m-outline:active:not( .m-disabled ) { color: $dark-gray; background-color: #FFF; }
+		}
+		.slide-bg { background-color: rgba( #000, .2 ); }
+		h1 a, h2 a { color: #FFF; }
+		h1 a:hover, h2 a:hover { border-color: #FFF; }
+
+		// SLIDER NAV
+		.nav-prev,
+		.nav-next { color: #FFF; border-color: #FFF; }
+		.nav-prev:hover,
+		.nav-next:hover { color: $dark-gray; background-color: #FFF; }
+
+		// SLIDER INDICATOR
+		.slider-indicator { background-color: #FFF; background-color: rgba( #FFF, .2 ); }
+		.slider-indicator > span { background-color: $accent-1; }
+
+	}
+
+	/* -------------------------------------------------------------------------
+		TABS
+	------------------------------------------------------------------------- */
+
+	.c-tabs {
+		.tab-list > li { color: $dark-gray; border-color: $x-soft-gray; background-color: transparent; }
+		.tab-list > li:hover { border-color: $medium-gray; }
+		.tab-list > li.m-active { color: #FFF; border-color: $accent-1; background-color: $accent-1; }
+	}
+
+	/* -------------------------------------------------------------------------
+		TEAM MEMBER
+	------------------------------------------------------------------------- */
+
+	.various-content .c-team-member,
+	.c-team-member {
+		.member-name { color: $dark-gray; }
+		.member-role { color: $body-font; }
+		.member-social > li > a:hover { color: #FFF; background-color: $accent-1; }
+	}
+
+
+/* -----------------------------------------------------------------------------
+
+    3.) HEADER
+
+----------------------------------------------------------------------------- */
+
+	/* -------------------------------------------------------------------------
+		LARGE & STANDARD HEADER
+	------------------------------------------------------------------------- */
+
+	#header.m-standard,
+	#header.m-large { background: url( $header-bg-image ) center 0 no-repeat; background-size: cover;
+
+		.header-inner { @include vertical-gradient-from-bottom( $accent-1, rgba( $accent-2, 0.8 ) ); }
+
+		// HEADER MENU
+		.header-menu > ul > li > a { color: $header-font; }
+		.header-menu > ul > li.m-active > a:after { background-color: #FFF; background-color: rgba( #FFF, .5 ); }
+		.header-menu > ul > li > a:hover:after { background-color: #FFF; background-color: rgba( #FFF, 1 ); }
+		.header-menu ul > li > ul { background-color: $header-submenu-bg; @include box-shadow( 1px 1px 2px rgba( #000, .15 ) ); }
+		.header-menu ul > li > ul a { color: $header-submenu-font; }
+		.header-menu ul > li > ul a:hover { color: $header-submenu-bg; background-color: $accent-1; }
+		.header-menu ul > li > ul li.m-hover > a:not( :hover ) { color: $header-submenu-bg; background-color: rgba( $accent-1, .7 ); }
+
+		// MAIN SIDEBAR TOGGLE
+		.main-sidebar-toggle { color: $header-font; border: 2px solid $header-font; }
+		.main-sidebar-toggle.m-active,
+		.main-sidebar-toggle:hover { background-color: $header-font; color: $accent-1; }
+
+	}
+
+	// IE9 FIX
+	@media all and ( min-width:0\0 ) and ( min-resolution: .001dpcm ) {
+		#header .header-inner { background-color: $accent-2; }
+	}
+
+	/* -------------------------------------------------------------------------
+		FIXED HEADER
+	------------------------------------------------------------------------- */
+
+	#header-fixed { background-color: $fixed-header-bg; background-color: rgba( $fixed-header-bg, .95 );
+
+		// HEADER MENU
+		.header-menu > ul > li > a { color: $fixed-header-font; }
+		.header-menu > ul > li.m-active > a:after { background-color: $accent-1; background-color: rgba( $accent-1, .6 ); }
+		.header-menu > ul > li > a:hover:after { background-color: $accent-1; }
+		.header-menu ul > li > ul { background-color: $fixed-header-submenu-bg; background-color: rgba( $fixed-header-submenu-bg, .95 ); }
+		.header-menu ul > li > ul ul { background-color: $fixed-header-submenu-bg; }
+		.header-menu ul > li > ul a { color: $fixed-header-submenu-font; }
+		.header-menu ul > li > ul a:hover { background-color: $accent-1; }
+		.header-menu ul > li > ul li.m-hover > a:not( :hover ) { background-color: rgba( $accent-1, .5 ); }
+		.header-menu > ul > li.m-hover > a,
+		.header-menu > ul > li.m-active > a { border-color: $accent-1; }
+
+		// MAIN SIDEBAR TOGGLE
+		.main-sidebar-toggle { color: $fixed-header-font; border: 2px solid $fixed-header-font; }
+		.main-sidebar-toggle.m-active,
+		.main-sidebar-toggle:hover { background-color: $fixed-header-font; color: $accent-1; }
+
+	}
+
+
+/* -----------------------------------------------------------------------------
+
+    4.) BODY / WRAPPER
+
+----------------------------------------------------------------------------- */
+
+#body { background-color: $accent-2; @include vertical-gradient( $accent-1, $accent-2 100vh ); }
+.m-header-scrolled-out #body { @include vertical-gradient( $accent-1, $accent-2 100% ); background-attachment: fixed; }
+#wrapper { border-color: $wrapper-bg; background-color: $wrapper-bg; }
+
+
+/* -----------------------------------------------------------------------------
+
+    5.) CORE
+
+----------------------------------------------------------------------------- */
+
+    /* -------------------------------------------------------------------------
+        PAGE HEADER
+    ------------------------------------------------------------------------- */
+
+	#page-header { border-color: $x-soft-gray;
+		h1 { color: $dark-gray; }
+		h1:after { background-color: $accent-1; }
+	}
+
+	/* -------------------------------------------------------------------------
+        BLOG LIST / DETAIL
+	------------------------------------------------------------------------- */
+
+	.blog-detail,
+	.blog-list {
+
+		// ARTICLE
+		.article-title { color: $dark-gray; }
+		.article-quote { border-color: $soft-gray; }
+		.article-quote blockquote p { color: $dark-gray; }
+		.article-link:before,
+		article.link .article-title:before { color: $soft-gray; }
+		.article-footer { border-color: $x-soft-gray; }
+		.article-info > li:before { color: $medium-gray; }
+
+	}
+
+	/* -------------------------------------------------------------------------
+        BLOG DETAIL
+	------------------------------------------------------------------------- */
+
+	.blog-detail {
+
+		// ARTICLE AUTHOR
+		.article-author {
+			.author-name { color: $dark-gray; }
+			.author-social > li > a { color: $accent-1; background-color: transparent; }
+			.author-social > li > a:hover { color: #FFF; background-color: $accent-1; }
+		}
+
+		// ARTICLE NAVIGATION
+		.article-navigation h5 { color: $dark-gray; }
+
+		// ARTICLE COMMENTS
+		.comment-list {
+			.comment-author { color: $dark-gray; }
+			.comment-info { border-color: $x-soft-gray; }
+			.comment-date:before,
+			.comment-reply:before { color: $medium-gray; }
+			.comment-reply:hover:before { color: $accent-1; }
+		}
+
+	}
+
+    /* -------------------------------------------------------------------------
+        PORTFOLIO DETAIL
+    ------------------------------------------------------------------------- */
+
+	.portfolio-detail {
+
+		// PROJECT IMAGES
+		.project-images { border-color: rgba( #000, 0.05 ); }
+		.project-images .image-info { background-color: rgba( #FFF, .5 ); }
+
+		// PROJECT INFO
+		.project-info > dt { color: $dark-gray; }
+
+		// PROJECT FOLDERS
+		.project-folders ul:before { color: $accent-1; }
+
+	}
+
+	/* -------------------------------------------------------------------------
+        SEARCH RESULTS
+	------------------------------------------------------------------------- */
+
+	.search-results .item-title { color: $dark-gray; }
+	.search-results .search-query { color: $accent-2; }
+
+	/* -------------------------------------------------------------------------
+        ERROR PAGE
+	------------------------------------------------------------------------- */
+
+	.error-page {
+		.error-header h1 { color: $accent-1; }
+		.error-header h1 > span { color: $medium-gray; }
+		.error-header p { color: $dark-gray; }
+	}
+
+
+/* -----------------------------------------------------------------------------
+
+    6.) PAGE SIDEBAR
+
+----------------------------------------------------------------------------- */
+
+#page-sidebar {
+
+	.widget-title,
+	.widget-title a { color: $dark-gray; }
+	.widget-title:after { background-color: $accent-1; }
+
+}
+
+
+/* -----------------------------------------------------------------------------
+
+    7.) BOTTOM PANEL
+
+----------------------------------------------------------------------------- */
+
+#bottom-panel { color: $bp-font; background-color: $bp-bg; border-color: $bp-medium-gray;
+
+	.widget-title,
+	.widget-title a { color: $bp-title; }
+	.widget-title:after { background-color: $accent-1; }
+
+	.c-loading-anim { background-color: transparent; }
+	.c-alert-message { color: $bp-font; border-color: $bp-soft-gray; background: none; @include box-shadow( none ); }
+
+    /* -------------------------------------------------------------------------
+        BLOG WIDGET
+    ------------------------------------------------------------------------- */
+
+	.blog-widget {
+		ul > li { border-color: $bp-soft-gray; }
+		h4 a { color: $bp-font; }
+		h4 a:hover { border-color: $bp-font; }
+		.date { color: $bp-font; color: rgba( $bp-font, .5 );  }
+	}
+
+    /* -------------------------------------------------------------------------
+        FLICKR / DRIBBLE / INSTAGRAM WIDGET
+    ------------------------------------------------------------------------- */
+
+	.image-list > li > a { @include box-shadow( 0 0 0 3px $bp-soft-gray ); }
+	.image-list > li > a:hover { @include box-shadow( 0 0 0 3px $bp-medium-gray ); }
+
+    /* -------------------------------------------------------------------------
+        SUBSCRIBE WIDGET
+    ------------------------------------------------------------------------- */
+
+	.subscribe-widget {
+		input { color: $bp-font; background-color: $bp-soft-gray; }
+		button { color: $bp-font; }
+	}
+
+    /* -------------------------------------------------------------------------
+        TWITTER WIDGET
+    ------------------------------------------------------------------------- */
+
+	.twitter-widget {
+		.nav-buttons { border-color: $accent-1; }
+		.nav-buttons > button { color: $bp-font; }
+		.nav-buttons > button:hover { color: #FFF; background-color: $accent-1; }
+	}
+
+    /* -------------------------------------------------------------------------
+        BACK TO TOP
+    ------------------------------------------------------------------------- */
+
+	#back-to-top { color: $bp-font; }
+
+}
+
+
+/* -----------------------------------------------------------------------------
+
+    8.) FOOTER
+
+----------------------------------------------------------------------------- */
+
+#footer { color: #FFF;
+	a { color: #FFF; border-color: rgba( #FFF, 0.2 ); }
+	a:hover { border-color: #FFF; }
+}
+
+    /* -------------------------------------------------------------------------
+        FOOTER SOCIAL
+    ------------------------------------------------------------------------- */
+
+	#footer .footer-social { margin-top: -2px; }
+	#footer .footer-social > li > a:hover { color: $accent-2; background-color: #FFF; }
+
+
+/* -----------------------------------------------------------------------------
+
+    9.) MAIN SIDEBAR
+
+----------------------------------------------------------------------------- */
+
+#main-sidebar { color: $ms-font; background-color: $ms-bg;
+
+	.sidebar-divider { border-color: $ms-soft-gray;  }
+
+	/* -------------------------------------------------------------------------
+        SIDEBAR CLOSE
+    ------------------------------------------------------------------------- */
+
+	.sidebar-close { color: #FFF; background-color: $accent-1; }
+	.sidebar-close:hover { color: $accent-1; background-color: #FFF; }
+
+	/* -------------------------------------------------------------------------
+        SIDEBAR SEARCH
+    ------------------------------------------------------------------------- */
+
+	.sidebar-search { background-color: $ms-soft-gray;
+		input { color: #FFF; }
+		input.m-has-placeholder { color: rgba( #FFF, .5 ); }
+		button { color: $accent-1; }
+		button:hover { color: #FFF; background-color: $accent-1; }
+	}
+
+	/* -------------------------------------------------------------------------
+        SIDEBAR MENU
+    ------------------------------------------------------------------------- */
+
+	.sidebar-menu a { color: $ms-font; }
+	.sidebar-menu a:hover { border-color: $ms-font; }
+	.sidebar-menu .m-active > a { color: $accent-1; }
+	.sidebar-menu .m-active > a:hover { border-color: $accent-1; }
+	.sidebar-menu .toggle { color: $accent-1; }
+	.sidebar-menu .toggle.m-active,
+	.sidebar-menu .toggle:hover { color: #FFF; background-color: $accent-1; }
+
+	// SUBMENU
+	.sidebar-menu ul > li > ul a { color: rgba( $ms-font, .5 ); }
+	.sidebar-menu ul > li > ul a:hover { border-color: rgba( $ms-font, .5 ); }
+
+	/* -------------------------------------------------------------------------
+        SIDEBAR SOCIAL
+    ------------------------------------------------------------------------- */
+
+	.sidebar-social > li > a { color: $ms-bg; background-color: $ms-font; }
+	.sidebar-social > li > a:hover { color: #FFF; background-color: $accent-1; }
+
+	/* -------------------------------------------------------------------------
+        SIDEBAR WIDGETS
+    ------------------------------------------------------------------------- */
+
+	.sidebar-widgets > .widget { border-color: $ms-soft-gray; }
+	.widget-title,
+	.widget-title a { color: $ms-title; }
+	.widget-title:after { background-color: $accent-1; }
+
+	.c-loading-anim { background-color: transparent; }
+	.c-alert-message { color: $ms-font; border-color: $ms-soft-gray; }
+
+    /* -------------------------------------------------------------------------
+        FLICKR / DRIBBLE / INSTAGRAM WIDGET
+    ------------------------------------------------------------------------- */
+
+	.image-list > li > a { @include box-shadow( 0 0 0 3px $ms-soft-gray ); }
+	.image-list > li > a:hover { @include box-shadow( 0 0 0 3px $ms-medium-gray ); }
+
+    /* -------------------------------------------------------------------------
+        SUBSCRIBE WIDGET
+    ------------------------------------------------------------------------- */
+
+	.subscribe-widget input { color: $ms-font; background-color: $ms-soft-gray; }
+
+    /* -------------------------------------------------------------------------
+        TWITTER WIDGET
+    ------------------------------------------------------------------------- */
+
+	.twitter-widget {
+		.tweet_time a { color: $ms-font; }
+		.tweet_time a:hover { border-color: $ms-font; }
+		.nav-buttons { border-color: $accent-1; }
+		.nav-buttons > button { color: $ms-font; }
+		.nav-buttons > button:hover { color: #FFF; background-color: $accent-1; }
+	}
+
+}
+
+
+/* -----------------------------------------------------------------------------
+
+    10.) RESPONSIVE
+
+----------------------------------------------------------------------------- */
+
+    /* -------------------------------------------------------------------------
+        LARGE DEVICES
+    ------------------------------------------------------------------------- */
+
+    @media ( max-width: 1199px ) {
+
+		// MAIN SIDEBAR
+		#main-sidebar {
+			.sidebar-menu .toggle:hover { color: $accent-1; background-color: transparent; }
+			.sidebar-menu .toggle.m-active { color: #FFF; background-color: $accent-1; }
+		}
+
+	}

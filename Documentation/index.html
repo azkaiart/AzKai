@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VIBES documentation</title>
+
+        <link rel="stylesheet" type="text/css" href="assets/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="assets/style.css">
+        <link rel="stylesheet" type="text/css" href="assets/social-icons.css">
+        <link rel="stylesheet" type="text/css" href="assets/magnific-popup.min.css">
+
+        <!--[if lte IE 8]>
+        <script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+
+    <div id="top" class="container">
+        <div id="wrapper">
+
+            <!-- HEADER : begin -->
+            <header>
+                <div class="row">
+                    <div class="offset1 span10">
+                        <!-- LOGO : begin -->
+                        <div id="logo"><img src="content/logo.png" alt=""></div>
+                        <!-- LOGO : end -->
+                    </div>
+                </div>
+            </header>
+            <!-- HEADER : end -->
+
+            <!-- DESCRIPTION : begin -->
+            <div id="description">
+                <div class="row">
+                    <div class="offset1 span10">
+                        <div class="description-inner">
+                            <h1>Documentation</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- DESCRIPTION : end -->
+
+            <!-- CORE : begin -->
+            <div id="core">
+
+                <div class="row">
+
+                    <!-- NAV : begin -->
+                    <div class="offset1 span3">
+
+                        <nav class="main">
+                            <ul class="nav">
+                                <li class="active"><a href="#introduction">Introduction</a></li>
+								<li><a href="#css-customization">CSS Customization</a></li>
+								<li><a href="#header-logo">Header Logo</a></li>
+								<li><a href="#widgets">Widgets</a></li>
+								<li><a href="#contact-form">Contact Form</a></li>
+								<li>
+									<a href="#other">Other</a>
+									<ul>
+										<li><a href="#icons">Icons</a></li>
+										<li><a href="#inview-animations">InView Animations</a></li>
+										<li><a href="#fullsize-layout">Fullsize Layout</a></li>
+										<li><a href="#parallax-video">Parallax Section Video</a></li>
+									</ul>
+								</li>
+                                <li><a href="#credits">Credits</a></li>
+                            </ul>
+                        </nav>
+
+                    </div>
+                    <!-- NAV : end -->
+
+                    <!-- CONTENT : begin -->
+                    <div class="span7 content">
+
+						<!-- INTRODUCTION : begin -->
+						<section id="introduction">
+							<h2>Introduction</h2>
+							<p>Thank you for purchasing <strong>VIBES</strong>!</p>
+							<p>This documentation will guide you through the customization possibilities of <strong>VIBES</strong> HTML5 template. If you don't find answers
+							to all of your questions here, then feel free to contact me through my
+							<a href="http://themeforest.net/user/ShakespeareThemes/portfolio?ref=LubosVolovar">profile on ThemeForest</a>.</p>
+							<p>If you are a HTML beginner, <strong>I recommend to install some advanced HTML editor</strong> before you dive into customizing this template.
+							<a href="http://notepad-plus-plus.org/" target="_blank">Notepad++</a> is great if you are Windows user and I've heard that
+							<a href="http://brackets.io/" target="_blank">Brackets</a> editor is pretty good too if you are on Mac.</p>
+
+							<p>If you are already loving <strong>VIBES</strong> template, please <strong>don't forget to rate it</strong>
+							***** under your <a href="http://themeforest.net/downloads">ThemeForest account / downloads</a>. Thank you!</p>
+
+						</section>
+						<!-- INTRODUCTION : end -->
+
+						<!-- CSS CUSTOMIZATION : begin -->
+						<section id="css-customization">
+
+							<h2>CSS Customization</h2>
+
+							<h3>Adding your own CSS definitions</h3>
+							<p>If you want to add your own CSS definitions or override existing ones, use the <strong>"library/css/custom.css"</strong> file for that.
+							This file is already linked to all HTML templates, just save your changes and it is done.</p>
+
+							<h3>Changing the color skin</h3>
+							<p>VIBES offers several skins to choose from. In order to change the default one, you need to search for "default.css" inside HEAD tag.
+							By default, whole line looks like this:</p>
+							<p><code>&lt;link rel="stylesheet" type="text/css" href="library/css/skin/default.css"&gt;</code></p>
+							<p>You can find all skins in "library/css/skin" directory. Change the "default" in above code to name of the existing skin,
+							for example: "sunrise", "orient" or "mavericks".
+							For example, if you want to use the "mavericks" skin, you need to change the code to look like this:</p>
+							<p><code>&lt;link rel="stylesheet" type="text/css" href="library/css/skin/mavericks.css"&gt;</code></p>
+							<p>Please note, <strong>that you will need to do this for all HTML files</strong>, but you can use something like "mass replace in files"
+							function of your text editor ("Search / Find in Files..." if you are using Notepad++) to make it quick.</p>
+
+							<h3>Custom color scheme with SASS</h3>
+							<p>If you are not familiar with the SASS language, check <a href="http://sass-lang.com">sass-lang.com</a> first.</p>
+							<p>The easiest way to create a custom color scheme (skin) is to <strong>make copy of the existing one</strong> in <strong>"library/skin"</strong> directory
+							and change some SASS variables.</p>
+							<p>You will find <strong>two file types</strong> for each theme, one with ".css" extension and other with the ".scss" extension.
+							Make copy of the ".scss" one (for example "default.scss") and rename it to, let's say, "mytheme.scss".</p>
+							<p>Open this new file in the editor. You will find all variables at the top of the document, most important ones are
+							<strong>"$accent-1"</strong> and <strong>"$accent-2"</strong>.
+							You can change just those two colors to create a brand new skin,
+							but of course, you can play with values of all other variables (or even change non-variable colors deeper in the code) to fine-tune your scheme.</p>
+							<p>After you have made your changes, save the file. Now <strong>you need to convert "mytheme.scss" to "mytheme.css"</strong> (note the different extension).
+							First create an empty file named <strong>"mytheme.css" in "library/css/skin"</strong>.
+							Then use any online SASS to CSS converter (for example <a href="http://sassmeister.com/">sassmeister.com</a>).
+							After the successful conversion, <strong>copy the converted CSS code to "mytheme.css" file</strong>.
+							Now you just need to link this new skin to your templates following the instructions in <strong>Changing the color skin</strong> section above.</p>
+
+						</section>
+						<!-- CSS CUSTOMIZATION : end -->
+
+						<!-- HEADER LOGO : begin -->
+						<section id="header-logo">
+
+							<h2>Header Logo</h2>
+
+							<p>Default code for header logo, which can be found in all tempaltes, looks like this:</p>
+<pre>
+&lt;div class=&quot;header-branding&quot;&gt;
+    &lt;div class=&quot;header-branding-inner&quot;&gt;
+        &lt;a href=&quot;index.html&quot;&gt;&lt;img src=&quot;images/logo-large.png&quot;
+            width=&quot;230&quot; height=&quot;230&quot; alt=&quot;Vibes&quot;
+            data-hires=&quot;images/logo-large.2x.png&quot;
+            data-fixed=&quot;images/logo.png&quot; data-fixed-hires=&quot;images/logo.2x.png&quot;
+            data-fixed-width=&quot;52&quot; data-fixed-height=&quot;52&quot;&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+							<p>There are many of various attributes to make sure that the logo will be always displayed correctly.</p>
+							<p>Most important and <strong>the only required attribute</strong> is <strong>src</strong>. You need to add a link to your default logo there.
+							In my demo, I am using slightly different images for large header and for standard header (BTW, the only code difference
+							between those two headers is a simple class. You need to add <strong>m-large</strong> to Header element
+							for displaying the large header and <strong>m-standard</strong> class for displaying the standard one.</p>
+							<p>If you want to display the logo as it is (without being resized by browser) and you DO NOT want to use also the Retina version,
+							you don't need to specify <strong>height</strong> and <strong>height</strong>.</p>
+							<p>If you do want to use also the Retina version of logo, <strong>you must use those two attributes</strong>
+							to define logo dimensions. For example, if your non-retina logo is 158x60, retina version is 316x120,
+							add 158 to <strong>width</strong> atrribute and 60 to <strong>height</strong> attribute.
+							Link to Retina version of logo should be added to <strong>data-hires</strong> attribute.</p>
+							<p>Actually, it is possible to omit this <strong>data-hires</strong> attribute and insert Retina image directly to <strong>src</strong>
+							attribute, which can lead to some minor logo defects on non-retina screens, but is should work good in most cases.</p>
+							<p>To define a logo for fixed header use <strong>data-fixed</strong> attribute. Add a link to Retina version to
+							<strong>data-fixed-hires</strong>. Same as per non-fixed version, you need to define logo dimensions, you can do that using <strong>data-fixed-width</strong>
+							and <strong>data-fixed-height</strong>. In many cases it will be enough to omit width and define just height (<strong>data-fixed-height</strong>).</p>
+							<p>Please take a look at logo in <strong>home-onepage.html</strong> template, where you can see slightly different example of header logo.</p>
+
+						</section>
+						<!-- HEADER LOGO : end -->
+
+						<!-- WIDGETS : begin -->
+						<section id="widgets">
+
+							<h2>Widgets</h2>
+
+							<h3>Twitter feed</h3>
+							<p>In order to make Twitter Feed work, you need to create your own Twitter App.
+							Go to <a href="https://dev.twitter.com/" target="_blank">dev.twitter.com</a> and log in with your Twitter account.</p>
+							<p>When you are logged in, go to <a href="https://dev.twitter.com/apps">your applications</a> and click on
+							<strong>Create a new application</strong>.
+							Give it some meaningful name, for example "yourUsername Twitter Feed" and fill all other required fields.
+							After submiting the form, you will be redirected to next screen, where you need to click on <strong>Create my access token</strong> button (at the bottom).
+							<p>Now you should see the screen with all of your app's information (refresh the page as the access token may not be visible yet).
+							Copy the <strong>Consumer key</strong>, <strong>Consumer secret</strong>, <strong>Access token</strong> and <strong>Access token secret</strong>
+							to the corresponding places in <strong>"library/twitter/index.php"</strong> file.</p>
+							<p>You can also follow <a href="http://iag.me/socialmedia/how-to-create-a-twitter-app-in-8-easy-steps/">this tutorial</a> on how to create Twitter App.</p>
+							<p>After you have inserted your credentials, search for element with "twitter-widget" class in any template and change its
+							<strong>"data-id"</strong> attribute to your Twitter username.
+							You will need to do this change for all HTML templates.</p>
+							<p>Please note that this widget will work <strong>only on PHP server</strong>, it may not work on your local machine.</p>
+
+							<h3>MailChimp subscribe form</h3>
+							<p>You need to have a <a href="http://mailchimp.com/">Mailchimp</a> account in order to make subscribe form work.</p>
+							<p>Log in to Mailchimp and go to desired subscribers <strong>List</strong> which you want to connect with this template.
+							Click on <strong>Signup forms</strong> and build some basic signup form. If you want to use this template's subscribe form as it is, you will need
+							just an email field (field tag EMAIL).</p>
+							<p>When you done building the form, go back to <strong>Signup forms</strong> and click on <strong>Embedded forms</strong>.
+							You should see the code of your form in <strong>Copy/paste onto your site</strong> section. Copy it into your text editor, but you need just form's action URL.
+							Search for "&lt;form action=" and copy the whole URL. It should look similar to this: <strong>http://volovar.us8.list-manage.com/subscribe/post?u=76a50c9454ec8ab78914d1bf2&amp;id=49e892f53d</strong>.</p>
+							<p>You need to edit it a little bit though. Replace <strong>"post?"</strong> with <strong>"post-json?"</strong> and add <strong>"&amp;c=?"</strong> at the end.
+							You should get something similar to this: <strong>http://volovar.us8.list-manage.com/subscribe/post-json?u=76a50c9454ec8ab78914d1bf2&amp;id=49e892f53d&amp;c=?</strong>.</p>
+							<p>You can also replace "&amp;" with "&amp;amp;" for HTML to be valid. So the final link should look like this:
+							<strong>http://volovar.us8.list-manage.com/subscribe/post-json?u=76a50c9454ec8ab78914d1bf2&amp;amp;id=49e892f53d&amp;amp;c=?</strong>.</p>
+							<p>Now, search for element with "subscribe-widget-form" class and change its "action" attribute to your URL created above.
+							You will need to make this change for all HTML templates.</p>
+
+							<h3>Instagram feed</h3>
+							<p>For this widget to be fully functional, you must authorize Embedagram plugin. Go to <a href="http://embedagram.com/">embedagram.com</a>
+							and click "...let's get started" link. Instagram will ask for authorization, so click on "Authorize" button. You don't need to do anything else on
+							that page, you can close it.</p>
+							<p>You will need to obtain your Instagram ID (this is different from your user name) for this widget to work.
+							Use for example <a href="http://yvesvanbroekhoven.github.io/get-your-instagram-user-id/" target="blank">this page</a> to get your ID.</p>
+							<p>You can find the example of the Instagram feed in <strong>home-onepage.html</strong> template.
+							Now search for element with class <strong>"instagram-widget"</strong> and insert this ID to its <strong>data-id</strong> attribute.</p>
+
+							<h3>Flickr feed</h3>
+							<p>First, you need to obtain the ID of photostream you want to display.
+							To do so, navigate to desired photostream at Flickr and copy the code from browser's location bar right after "http://www.flickr.com/photos/".</p>
+							<p>You can find the example of the Instagram feed in <strong>home-blog.html</strong> template.
+							Now search for element with class <strong>"flickr-widget"</strong> and add this ID to its <strong>data-id</strong> attribute.</p>
+
+							<h3>Dribbble feed</h3>
+							<p>Same as per Flickr feed, you need to obtain the ID of user you want to display. It can be found in the URL of user's profile.</p>
+							<p>You can find the example of the Dribbble feed in <strong>index.html</strong> template.
+							Now search for element with class <strong>"dribbble-widget"</strong> and add this ID to its <strong>data-id</strong> attribute.</p>
+
+						</section>
+						<!-- WIDGETS : end -->
+
+						<!-- CONTACT FORM : begin -->
+						<section id="contact-form">
+
+							<h2>Contact Form</h2>
+
+							<p>Please note, that you will need to <strong>host your site on the PHP hosting</strong> for contact form to work.</p>
+							<p>To set up the contact form, you just need to open the <strong>"ajax/contact-form.php"</strong> file
+							and change all its variables to suit your needs. Most important variable is the first one - <strong>"email_to"</strong>.
+							This specifies the email address where all contact form messages will be sent.</p>
+
+						</section>
+						<!-- CONTACT FORM : end -->
+
+						<!-- OTHER : begin -->
+						<section id="other">
+
+							<h2>Other</h2>
+
+							<h3 id="icons">Icons</h3>
+							<p><strong>VIBES</strong> uses <a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a> iconic font.</p>
+							<p>To add an icon, use <code>&lt;i class="fa fa-heart"&gt;&lt;/i&gt;</code> code and replace the "fa-heart" with any class from
+							<a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">Font Awesome icon set</a>. For example:
+							<code>&lt;i class="fa fa-flag"&gt;&lt;/i&gt;</code>, <code>&lt;i class="fa fa-folder"&gt;&lt;/i&gt;</code>, etc.</p>
+
+							<h3 id="inview-animations">InView Animations</h3>
+							<p>You can define a simple animation for any element which will be fired when element appears on screen.
+							List of all animations <a href="http://daneden.github.io/animate.css/">can be found here</a>.</p>
+							<p>To define an InView animation, add a <strong>data-inview-anim</strong> attribute with desired animation's name to any element.
+							For example:</p>
+							<p><code>&lt;p data-inview-anim="fadeInLeft"&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit&lt;/p&gt;</code></p>
+
+							<h3 id="fullsize-layout">Fullsize Layout</h3>
+							<p>To make layout fullsize, just add "m-fullsize" to the <strong>body tag</strong>, just like this:</p>
+							<p><code>&lt;body class="m-fullsize"&gt;</code></p>
+							<p>You will need to do it for all html templates.</p>
+
+							<h3 id="parallax-video">Parallax Section Video</h3>
+							<p>You can define a video background for <strong>Parallax Section</strong> element
+							by adding <strong>data-videobg-id</strong> attribute which contains ID of desired YouTube video.
+							Take a look at <strong>"home-onepage.html"</strong> for example.</p>
+							Please note, that video background is <strong>disabled on tablet/phone devices</strong> for performance reasons,
+							so always provide also image background as a fallback.</p>
+
+						</section>
+						<!-- OTHER : end -->
+
+                        <!-- CREDITS : begin -->
+                        <section id="credits">
+
+                            <h2>Credits</h2>
+
+							<p><strong>Images seen in preview are NOT included</strong>.</p>
+							<p>All portfolio illustrations by amazing <a href="http://justinmezzell.com/">Justin Mezzell</a>.</p>
+							<p>Here is the list of photographies used in masonry list portfolio:<br>
+							<a href="http://www.flickr.com/photos/min0n/5836582764/">photo 1</a> by <a href="https://www.flickr.com/photos/min0n/">M Trombone</a>,
+							<a href="http://www.flickr.com/photos/geogoun/7919232798/">photo 2</a> by <a href="https://www.flickr.com/photos/geogoun/">Geo Goun</a></li>,
+							<a href="http://www.flickr.com/photos/seeminglee/169367424/">photo 3</a> by <a href="https://www.flickr.com/photos/seeminglee/">See-ming Lee</a></li>,
+							<a href="http://www.flickr.com/photos/dexxus/5820866907/">photo 4</a> by <a href="https://www.flickr.com/photos/dexxus/">paul bica</a></li>,
+							<a href="http://www.flickr.com/photos/kimdokhac/4932093811/">photo 5</a> by <a href="http://www.flickr.com/photos/kimdokhac/">kimdokhac</a></li>,
+							<a href="http://www.flickr.com/photos/astragony/4852775794">photo 6</a> by <a href="https://www.flickr.com/photos/astragony/">Daniel Zedda</a></li>,
+							<a href="http://www.flickr.com/photos/anieto2k/9435123826/">photo 7</a> by <a href="https://www.flickr.com/photos/anieto2k/">Andrés Nieto Porras</a></li>,
+							<a href="http://www.flickr.com/photos/damienz/7968621538/">photo 8</a> by <a href="https://www.flickr.com/photos/damienz/">Daniel Sjöström</a></li>,
+							<a href="http://www.flickr.com/photos/damienz/7981640601/">photo 9</a> by <a href="https://www.flickr.com/photos/damienz/">Daniel Sjöström</a></li>,
+							<a href="http://www.flickr.com/photos/zachd1_618/5740851597/">photo 10</a> by <a href="https://www.flickr.com/photos/zachd1_618/">Zach Dischner</a></li>,
+							<a href="http://www.flickr.com/photos/anieto2k/8049532033/">photo 11</a> by <a href="https://www.flickr.com/photos/anieto2k/">Andrés Nieto Porras</a></li>,
+							<a href="http://www.flickr.com/photos/anieto2k/9727711681/">photo 12</a> by <a href="https://www.flickr.com/photos/anieto2k/">Andrés Nieto Porras</a></li>.
+							</p>
+							<p>Following free images were downloaded from <a href="http://unsplash.com/">unsplash.com</a>
+							and <a href="http://www.gratisography.com/">gratisography.com</a>:<br>
+								<a href="https://s3.amazonaws.com/ooomf-com-files/PcLGXNjMTdiFVKTrElCl__DSC2245.jpg">image 1</a>,
+								<a href="https://s3.amazonaws.com/ooomf-com-files/IHLjdHdzSvi0rgUMMlSK_TE3_0286.jpg">image 2</a>,
+								<a href="https://s3.amazonaws.com/ooomf-com-files/Ta3Z3hRxTTCTHmi1s1B1_Brooklyn_Bridge_by_Anders_Jilden.jpg">image 3</a>,
+								<a href="http://www.gratisography.com/pictures/122H.jpg">image 4</a>.
+							</p>
+							<p>You can purchase your own license for avatar icons used in demo at <a href="http://graphicriver.net/item/set-of-avatar-flat-icons/7766065">graphicriver.net</a>.
+							License for background images with planets can be also bought at <a href="http://graphicriver.net/item/planet-constructor/168302">graphicriver.net</a>.</p>
+
+							<h2>Please Rate</h2>
+
+							<p>If you like <strong>VIBES</strong> template, please <strong>don't forget to rate it</strong>
+							***** under your <a href="http://themeforest.net/downloads">ThemeForest account / downloads</a>. Thank you!</p>
+
+							<h2>Contact</h2>
+
+                            <p>You can find my ThemeForest portfolio <a href="http://themeforest.net/user/LubosVolovar/portfolio?ref=LubosVolovar">here</a>
+							and you can use the contact form on <a href="http://themeforest.net/user/LubosVolovar#contact">my profile page</a> to get in touch.</p>
+
+                        </section>
+                        <!--BLOG: CREDITS : end -->
+
+                    </div>
+                    <!-- CONTENT : end -->
+
+                </div>
+
+            </div>
+            <!-- CORE : end -->
+
+        </div>
+
+        <footer>
+            <p>Copyright &copy; Lubos Volovar</p>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="assets/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="assets/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="assets/scripts.js"></script>
+
+    </body>
+</html>

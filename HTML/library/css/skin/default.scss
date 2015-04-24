@@ -1,4 +1,4 @@
-﻿/* -----------------------------------------------------------------------------
+/* -----------------------------------------------------------------------------
 
 	TABLE OF CONTENTS
 
@@ -26,45 +26,47 @@
 	-------------------------------------------------------------------------- */
 
 	// MAIN PALETTE
-	$accent-1: #ec587a; // primary accent color
-	$accent-2: #dca749; // secondary accent color
-	$x-soft-gray: #eeeeee; // very soft backgrounds
-	$soft-gray: #e1e1e1; // dividers
-	$medium-gray: #d0d0d0; // soft background
-	$dark-gray: #3f3f3f; // titles, strong text
-	$x-dark-gray: #1a1a1a; // titles, strong text on bright bg
+	$accent-1: #fc225b; // primary accent color
+	$accent-2: #f4bc62; // secondary accent color
+	$shade: #0b0826; //This is the purple shade color
+	$soft-primary: mix($accent-1, #fff, 85%); // accent-1 mixed with white to offset brightness for backgrounds
+	$x-soft-gray: #edeae4; // very soft backgrounds
+	$soft-gray: #e0d1d5; // dividers
+	$medium-gray: #d1baca; // soft background
+	$dark-gray: #2f2d40; // titles, strong text
+	$x-dark-gray: #0b0826; // titles, strong text on bright bg
 
 	// GENERAL
-	$body-bg: $accent-2;
-	$body-font: #494949;
+	$body-bg: $soft-primary;
+	$body-font: $dark-gray;
 	$link: $accent-1;
 
 	// HEADER
 	$header-bg-image: '../../../images/header_bg.jpg';
 	$header-font: #FFF;
 	$header-submenu-bg: #FFF;
-	$header-submenu-font: #3f3f3f;
-	$fixed-header-bg: #161616;
+	$header-submenu-font: $dark-gray;
+	$fixed-header-bg: $x-dark-gray;
 	$fixed-header-font: #FFF;
-	$fixed-header-submenu-bg: #161616;
+	$fixed-header-submenu-bg: $x-dark-gray;
 	$fixed-header-submenu-font: #FFF;
 
 	// BODY / WRAPPER
 	$wrapper-bg: #FFF;
 
 	// MAIN SIDEBAR
-	$ms-bg: #161616;
-	$ms-title: #FFF;
-	$ms-font: #FFF;
-	$ms-soft-gray: #2e2e2e;
-	$ms-medium-gray: #404040;
+	$ms-bg: $x-dark-gray;
+	$ms-title: $x-soft-gray;
+	$ms-font: $x-soft-gray;
+	$ms-soft-gray: $dark-gray;
+	$ms-medium-gray: $dark-gray;
 
 	// BOTTOM PANEL
-	$bp-bg: #161616;
-	$bp-title: #FFF;
-	$bp-font: #FFF;
-	$bp-soft-gray: #2e2e2e;
-	$bp-medium-gray: #404040;
+	$bp-bg: $x-dark-gray;
+	$bp-title: $x-soft-gray;
+	$bp-font: $x-soft-gray;
+	$bp-soft-gray: $dark-gray;
+	$bp-medium-gray: $dark-gray;
 
 
 	/* -------------------------------------------------------------------------
@@ -428,7 +430,7 @@
 	------------------------------------------------------------------------- */
 
 	.c-slider {
-
+		.section-inner { background-color: rgba($shade, .15); }
 		.slide { color: #FFF; }
 		h1, h2, h3, h4 { color: #FFF; }
 		.c-button { color: $dark-gray; border-color: #FFF; background-color: #FFF;
@@ -438,7 +440,7 @@
 			&.m-outline:hover:not( .m-disabled ),
 			&.m-outline:active:not( .m-disabled ) { color: $dark-gray; background-color: #FFF; }
 		}
-		.slide-bg { background-color: rgba( #000, .2 ); }
+		.slide-bg { background-color: transparent; }
 		h1 a, h2 a { color: #FFF; }
 		h1 a:hover, h2 a:hover { border-color: #FFF; }
 
@@ -451,6 +453,34 @@
 		// SLIDER INDICATOR
 		.slider-indicator { background-color: #FFF; background-color: rgba( #FFF, .2 ); }
 		.slider-indicator > span { background-color: $accent-1; }
+
+		// QUOTES
+		.quote:before { 
+			position: absolute;
+			left: -10px;
+			top: -10px;
+			opacity: .15;
+			display: block;
+			font: normal normal normal 1em/1 FontAwesome;
+			font-size: 65px;
+			text-rendering: auto;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			content: "\f10d"
+		}
+		.quote:after { 
+			position: absolute;
+			right: -10px;
+			bottom: -10px;
+			opacity: .15;
+			display: block;
+			font: normal normal normal 1em/1 FontAwesome;
+			font-size: 65px;
+			text-rendering: auto;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			content: "\f10e"
+		 }
 
 	}
 
@@ -487,15 +517,22 @@
 	------------------------------------------------------------------------- */
 
 	#header.m-standard,
-	#header.m-large { background: url( $header-bg-image ) center 0 no-repeat; background-size: cover;
+	#header.m-large { background: url( $header-bg-image ) center 0 no-repeat; background-size: cover; background-color: inherit;
 
-		.header-inner { @include vertical-gradient-from-bottom( $accent-1, rgba( $accent-2, 0.8 ) ); }
+		.header-inner { 
+			@include vertical-gradient-from-bottom( $soft-primary, rgba( $accent-2, 0.8 ) ); background-color: inherit;
+			.header-branding-inner {
+				svg { display: none; }
+				a:before { content: ""; width: 300px; height: 77px; display: block; background: url(../../../images/azkai-full.png) no-repeat center center; background-size: contain; }
+			}
+			
+		}
 
 		// HEADER MENU
 		.header-menu > ul > li > a { color: $header-font; }
 		.header-menu > ul > li.m-active > a:after { background-color: #FFF; background-color: rgba( #FFF, .5 ); }
 		.header-menu > ul > li > a:hover:after { background-color: #FFF; background-color: rgba( #FFF, 1 ); }
-		.header-menu ul > li > ul { background-color: $header-submenu-bg; @include box-shadow( 1px 1px 2px rgba( #000, .15 ) ); }
+		.header-menu ul > li > ul { background-color: $header-submenu-bg; @include box-shadow( 1px 1px 2px rgba( $shade, .15 ) ); }
 		.header-menu ul > li > ul a { color: $header-submenu-font; }
 		.header-menu ul > li > ul a:hover { color: $header-submenu-bg; background-color: $accent-1; }
 		.header-menu ul > li > ul li.m-hover > a:not( :hover ) { color: $header-submenu-bg; background-color: rgba( $accent-1, .7 ); }
@@ -516,7 +553,11 @@
 		FIXED HEADER
 	------------------------------------------------------------------------- */
 
-	#header-fixed { background-color: $fixed-header-bg; background-color: rgba( $fixed-header-bg, .95 );
+	#header-fixed { background-color: $shade; background-color: rgba( $shade, .90 );
+
+		// Logo
+		a .logo { fill: #fff; color: #fff; min-width: 100%; width: inherit; }
+		.header-branding-inner { width: 52px; width: 52px; }
 
 		// HEADER MENU
 		.header-menu > ul > li > a { color: $fixed-header-font; }
@@ -544,8 +585,8 @@
 
 ----------------------------------------------------------------------------- */
 
-#body { background-color: $accent-2; @include vertical-gradient( $accent-1, $accent-2 100vh ); }
-.m-header-scrolled-out #body { @include vertical-gradient( $accent-1, $accent-2 100% ); background-attachment: fixed; }
+#body { background-color: $accent-2; @include vertical-gradient( $soft-primary, $accent-2 100vh ); }
+.m-header-scrolled-out #body { @include vertical-gradient( $soft-primary, $accent-2 100% ); background-attachment: fixed; }
 #wrapper { border-color: $wrapper-bg; background-color: $wrapper-bg; }
 
 
@@ -565,8 +606,27 @@
 	}
 
 	/* -------------------------------------------------------------------------
+        ABOUT ME
+    ------------------------------------------------------------------------- */
+
+	.about-me-jumbotron { background-color: $x-soft-gray; }
+
+	/* -------------------------------------------------------------------------
+        ABOUT ME
+    ------------------------------------------------------------------------- */
+
+	a[class*="connect"] { color: $dark-gray; }
+	a[class*="connect"]:hover, a[class*="connect"]:focus { color: $accent-1; }
+
+	/* -------------------------------------------------------------------------
         BLOG LIST / DETAIL
 	------------------------------------------------------------------------- */
+	a .article-header, a .article-content { color: $dark-gray; }
+	.article-inner a .article-title { color: $accent-1; }
+
+	/* BLOG LINK FULL */
+
+
 
 	.blog-detail,
 	.blog-list {
@@ -699,6 +759,7 @@
 
 	.subscribe-widget {
 		input { color: $bp-font; background-color: $bp-soft-gray; }
+		input[type="submit"] { background-color: transparent; }
 		button { color: $bp-font; }
 	}
 

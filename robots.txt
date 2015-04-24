@@ -1,0 +1,2 @@
+User-agent: *
+Disallow: /azkai.io_stage

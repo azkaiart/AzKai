@@ -1,59 +1,636 @@
-﻿/* -----------------------------------------------------------------------------
+.hide { display: none; }
 
-    This file should be used to add your own CSS definitions or override
-	the existing ones.
+/* -------------------------------------------------------------------------
+        SPACING
+------------------------------------------------------------------------- */
+.no-margin-top {
+  margin-top: 0; }
 
------------------------------------------------------------------------------ */
+h1 small { font-size: .70em; color: #d1baca; }
 
-	/* your CSS here */
+/* -------------------------------------------------------------------------
+        ABOUT SECTION
+------------------------------------------------------------------------- */
+.section-header .subtext {
+  margin-top: 15px; }
+
+.about-me-picture {
+  border-radius: 50%;
+  height: 160px;
+  width: 160px;
+  margin-right: 27px;
+  position: relative; }
+
+.about-me-picture:before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background-image: url('../../images/kai-byroade.png');
+  background-size: cover;
+  min-width: inherit;
+  width: 100%;
+  height: 100%; }
+
+.about-me-jumbotron {
+  padding: 50px inherit;
+  width: 100%;
+  position: relative; }
+
+.about-me-jumbotron:before {
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background: url('../../images/kai-byroade.png') no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: .25; }
+
+.actual-size {
+  overflow: hidden;
+  max-height: 180px; }
+
+.actual-size img.pixel-image, .actual-size img {
+  height: 415px;
+  width: 600px;
+  max-width: 600px; }
+
+/* -------------------- CONNECT JUMBOTRON ------------------------------ */
+a[class*="connect"] {
+  display: block;
+  font-family: Montserrat, Arial, sans-serif;
+  text-transform: uppercase;
+  padding: 50px inherit;
+  text-align: center;
+  font-size: 1em;
+  text-decoration: none;
+  border: none; }
+
+a[class*="connect"]:hover, a[class*="connect"]:focus {
+  text-decoration: none;
+  border: none; }
+
+a[class*="connect"]:before {
+  display: block;
+  font: normal normal normal 1em/1 FontAwesome;
+  font-size: 65px;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.ico-linkedin:before {
+  content: "\f0e1"; }
+
+.ico-behance:before {
+  content: "\f1b4"; }
+
+.ico-deviantart:before {
+  content: "\f1bd"; }
+
+.ico-email:before {
+  content: "\f0e0"; }
+
+.ico-youtube:before {
+  content: "\f167"; }
+
+.ico-twitter:before {
+  content: "\f099"; }
+
+.ico-googleplus:before {
+  content: "\f0d5";
+}
+
+/* ----------------------------- BLOG ARTICLES ----------------------------------------- */
+.blog-link {
+  display: block;
+  border-bottom: none; }
+
+.blog-link h2 {
+  margin-top: 10px; }
+
+/* -------------------------------------- QUOTES --------------------------------- */
+.owl-theme {
+  background-color: transparent; }
+
+.owl-theme .section-inner {
+  background-color: transparent; }
+
+  /* -------------------------------------------------------------------------
+        ABOUT PAGE
+------------------------------------------------------------------------- */
+
+.resume-circle {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  margin: -20px auto 20px;
+  background-color: #fc4373;
+  color: #fff;
+  position: relative;
+  border: transparent solid 0;
+  box-shadow: #fc4373 0 0 0 2px;
+  transition: all .15s ease-in-out;
+}
+.resume-container a:hover .resume-circle {
+  width: 80px;
+  height: 80px;
+  border: #fff solid 3px;
+  box-shadow: #fc4373 0 0 0 5px;
+  margin-top: -23px;
+}
+.resume-circle:before {
+  line-height: 75px;
+  text-align: center;
+  position: relative;
+  top: -3px;
+  left: 30%;
+  color: #fff;
+  font-size: 35px;
+}
+.resume-container + .resume-container { margin-right: 45px; }
+.resume-container h4 {
+  margin-bottom: 0;
+}
+.resume {
+  color: #fc4373;
+  display: block;
+  cursor: pointer;
+}
+.resume h4 {
+  font-weight: bold;
+  transition: all .15s ease-in-out;
+}
+.resume-container a:hover {
+  text-decoration: none;
+  border: none;
+}
+
+/* Experiemental */
+
+.header-icon {
+    width: 72px;
+    height: 72px;
+    background-color: #fc4373;
+    display: block;
+    position: absolute;
+    right: -5px;
+    top: -36px;
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+}
+
+.header-icon i {
+    width: 72px;
+    height: 72px;
+    color: #fff;
+    display: inline-block;
+    line-height: 72px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.timeline .full-container {
+    padding: 48px 24px;
+}
+
+.timeline .full-container .header-wrap {
+    margin-top: 72px;
+    margin-bottom: 72px;
+    position: relative;
+}
+
+.timeline .section-header {
+    height: 0px;
+    position: relative;
+    border-bottom: #f5f5f5 2px solid;
+    width: 400px;
+}
+
+.timeline .section-header h2 {
+    display: inline-block;
+    position: absolute;
+    top: -20px;
+    font-size: 32px;
+    margin: 0px;
+    padding: 0px 24px 0px 0px;
+    color: #2f2d40;
+    left: -2px;
+    background-color: #eee;
+}
+
+.timeline .full-container .section-header {
+    border-bottom: #fc4373 2px solid;
+}
+
+.timeline .section-header {
+  height: 0px;
+  position: relative;
+  border-bottom: #666 2px solid;
+}
 
 
-/* -----------------------------------------------------------------------------
+/*=========================*/
+/* 4.6 Experience Section */
+/*=======================*/
+.experience-container {
+    position: relative;
+    margin-top: 96px;
+}
 
-    RESPONSIVE DEFINITIONS
+.experience-container .various-content ul > li { 
+  float: none;
+  padding-left: 25px;
+}
 
------------------------------------------------------------------------------ */
+.timeline-stroke {
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    left: 90px;
+    background-color: #e5e5e5;
+    top: 0px;
+    z-index: 50;
+}
 
-    /* -------------------------------------------------------------------------
+.ex-hightlight {
+    margin-bottom: 96px;
+}
+
+.ex-hightlight ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.ex-hightlight ul li {
+    display: inline-block;
+    list-style: none;
+    float: left;
+}
+
+.ex-hightlight ul li.yrs-ex {
+    width: 180px;
+    height: 180px;
+    background-color: #fff;
+    padding-left: 30px;
+    line-height: 170px;
+    font-size: 100px;
+    text-align: left;
+    position: relative;
+    z-index: 100;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    border: #e5e5e5 2px solid;
+    font-weight: 700;
+}
+.yrs-ex.outline-outward:before {
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    border: transparent 5px solid;
+}
+
+.ex-hightlight ul li.ex-inro {
+    width: 60%;
+    margin-left: 24px;
+    min-height: 180px;
+    position: relative;
+}
+
+.ex-details {
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.ex-hightlight ul li.ex-inro h2 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 36px;
+}
+
+.job-list-item {
+    margin: 48px 0px;
+    display: table;
+}
+
+.job-list-item ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.job-list-item  ul li {
+    display: table-cell;
+    list-style: none;
+    vertical-align: middle;
+}
+
+.lighter-box { background-color: #eee; }
+
+.job-list-item .job-date {
+    width: 180px;
+    background-color: #fff;
+    border: #e5e5e5 1px solid;
+    padding: 12px;
+    text-align: center;
+    position: relative;
+    z-index: 100;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-transition: all 100ms linear;
+    -moz-transition: all 100ms linear;
+    -o-transition: all 100ms linear;
+    -ms-transition: all 100ms linear;
+    transition: all 100ms linear;
+}
+
+.job-brand-container img {
+  max-width: 75px;
+}
+
+.job-list-item .job-date span {
+    display: block;
+}
+
+.job-list-item .job-description {
+    margin-left: 24px;
+    background-color: #fff;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    border: #eee 1px solid;
+    position: relative;
+}
+
+.job-description:after, .job-description:before {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.job-description:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-right-color: #ffffff;
+    border-width: 10px;
+    margin-top: -10px;
+}
+
+.job-description:before {
+    border-color: rgba(238, 238, 238, 0);
+    border-right-color: #e5e5e5;
+    border-width: 11px;
+    margin-top: -11px;
+}
+
+.job-identy-title {
+    margin-top: 0px;
+    font-size: 24px;
+    line-height: normal;
+}
+
+.job-identy-title span {
+    display: block;
+    font-size: 16px;
+}
+
+.job-details {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.job-description-container {
+    display: table;
+}
+
+.job-brand {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    border-right: #eee 1px solid;
+}
+
+.job-brand-container {
+    padding-left: 24px;
+    padding-right: 24px;
+    width: 180px;
+}
+
+.job-details-container {
+    padding: 20px 24px 24px 24px;
+}
+
+.job-details-container p {
+    margin-bottom: 0px;
+}
+
+.storke-finish {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background-color: #ccc;
+    position: absolute;
+    bottom: -2px;
+    left: -4px;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+}
+
+.job-ribbon {
+    position: relative;
+    background: #fc4373;
+    height: 36px;
+    margin-top: 24px;
+    left: -1px;
+    display: inline-block;
+}
+
+.job-ribbon:before, .job-ribbon:after {
+    border-style: solid;
+    height: 0;
+    width: 0;
+    display: block;
+    content: "";
+    position: absolute;
+}
+
+.job-ribbon:before, .job-ribbon:after {
+    border-color: #fc4373 transparent;
+    top: 0;
+}
+
+.job-ribbon:after {
+    right: -18px;
+    border-width: 18px 18px 18px 0;
+}
+
+.job-ribbon span {
+    display: inline-block;
+    padding: 0px 12px;
+    height: 36px;
+    line-height: 34px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+
+.job-ribbon i {
+    margin-right: 8px;
+    font-size: 18px;
+    position: relative;
+    top: 3px;
+}
+
+.experience-list li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.experience-container ul > li:before { background-color: transparent; }
+
+/*========================*/
+/* 4.7 Education Section */
+/*======================*/
+
+.edu-institute {
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.edu-institute li {
+    Width: 140px;
+    height: 140px;
+    display: inline-block;
+    margin: 0px 12px;
+}
+
+.edu-institute li a {
+    Width: 140px;
+    height: 140px;
+    display: inline-block;
+    background-color: #fff;
+    color: #444;
+    text-align: center;
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+}
+
+.edu-institute li.current a {
+    background-color: #363636;
+    color: #fff;
+}
+
+.edu-institute li.current a:hover {
+    background-color: #fff;
+    color: #16989d;
+}
+
+.edu-institute li a:before {
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border: #f5f5f5 solid 4px;
+}
+
+.edu-institute li a:hover {
+    color: #16989d;
+;
+}
+
+.edu-institute li a i {
+    font-size: 40px;
+    display: block;
+    margin-top: 30px;
+}
+
+.edu-institute-label {
+    display: block;
+    text-transform: uppercase;
+    margin-top: 12px;
+    font-weight: 400;
+    font-family: 'Roboto Slab', serif;
+    font-size: 12px;
+}
+
+.s-tab-container {
+}
+
+.s-tab-container .s-tab-content:first-child {
+    display: block;
+}
+
+.s-tab-content {
+    padding: 20px;
+    display: none;
+}
+
+.inistitute-name {
+    font-size: 24px;
+    margin-bottom: 0px;
+}
+
+.certifcate-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #ccc;
+}
+
+.various-content .resume-list li {
+  list-style: none;
+  display: block;
+}
+
+.various-content .resume-list li:before {
+  background-color: transparent;
+  display: inline-block !important;
+  font: normal normal normal .75em FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+  content: "\f138";
+ left: -10px;
+ top: 35%;
+}
+
+/* -------------------------------------------------------------------------
+        EXTRA LARGE DEVICES
+    ------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------
         LARGE DEVICES
 		devices with width between 992px and 1199px
     ------------------------------------------------------------------------- */
-
-    @media ( max-width: 1199px ) {
-
-		/* your CSS here */
-
-	}
-
-    /* -------------------------------------------------------------------------
+/* -------------------------------------------------------------------------
         MEDIUM DEVICES
 		devices with width between 768px and 991px
     ------------------------------------------------------------------------- */
-
-    @media ( max-width: 991px ) {
-
-		/* your CSS here */
-
-	}
-
-	/* -------------------------------------------------------------------------
+/* -------------------------------------------------------------------------
         SMALL DEVICES
 		devices with width between 481px and 767px
     ------------------------------------------------------------------------- */
-
-    @media ( max-width: 767px ) {
-
-		/* your CSS here */
-
-	}
-
-	/* -------------------------------------------------------------------------
+/* -------------------------------------------------------------------------
         EXTRA SMALL DEVICES
 		devices with width up to 480px
     ------------------------------------------------------------------------- */
-
-	@media ( max-width: 480px ) {
-
-		/* your CSS here */
-
-	}

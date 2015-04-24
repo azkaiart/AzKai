@@ -1,15 +1,4 @@
-﻿/*! -----------------------------------------------------------------------------
-
-	Vibes v1.0.3
-
-	This template is coded with SASS (http://sass-lang.com/).
-	The CSS was compressed for performance reasons. If you want to add or override
-	CSS definitions, please use custom.css file located in "library/css" or check
-	the documentation on how to create your custom color scheme.
-
------------------------------------------------------------------------------ */
-
-/* -----------------------------------------------------------------------------
+﻿/* -----------------------------------------------------------------------------
 
 	TABLE OF CONTENTS
 
@@ -35,9 +24,13 @@
 
 ----------------------------------------------------------------------------- */
 
-@import 'import/bootstrap.min.scss', 'import/font-awesome.min.scss',
-	'import/owl.carousel.scss', 'import/animate.min.scss',
-	'import/magnific-popup.scss', 'import/reset.scss';
+@import   'import/bootstrap.min.scss'
+        , 'import/font-awesome.min.scss'
+        , 'import/owl.carousel.scss'
+        , 'import/animate.min.scss'
+        , 'import/magnific-popup.scss'
+        , 'import/reset.scss'
+        ;
 
 
 /* -----------------------------------------------------------------------------
@@ -642,7 +635,7 @@ $vs: 24px; // vertical space
 		.slide { display: none; background-position: center; background-repeat: no-repeat; background-size: cover; }
 		.slide:first-child { display: block; }
 		.slide-inner { display: table; width: 100%; }
-		.slide-content { display: table-cell; padding: 80px 0; padding-bottom: 80 - $vs; height: 500px; }
+		.slide-content { display: table-cell; padding: 80px 0; padding-bottom: 80 - $vs; height: 200px; }
 		.owl-item .slide-content { @include opacity( 0 ); @include transition( all, 800ms ); }
 		.owl-item.active .slide-content { @include opacity( 1 ); }
 		.various-content {
@@ -653,8 +646,10 @@ $vs: 24px; // vertical space
 		.post-date { margin: - $vs 0 0 0; font-style: italic; }
 
 		// SLIDER NAV
-		.nav-prev,
-		.nav-next { display: block; position: absolute; top: 30px; right: 30px; width: 40px; height: 40px; line-height: 36px;
+		.slider-indicator, .nav-prev, .nav-next { z-index: 100; }
+		.nav-prev { display: block; position: absolute; top: 45%; left: 30px; width: 40px; height: 40px; line-height: 36px;
+			text-align: center; border: 2px solid transparent; }
+		.nav-next { display: block; position: absolute; top: 45%; right: 30px; width: 40px; height: 40px; line-height: 36px;
 			text-align: center; border: 2px solid transparent; }
 		.nav-prev { right: 80px; }
 		.nav-prev > i,

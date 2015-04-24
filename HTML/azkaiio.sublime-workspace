@@ -1,0 +1,674 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"form",
+				"formDiv"
+			],
+			[
+				"background",
+				"background-image"
+			],
+			[
+				"font-",
+				"font-style"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "library/includes/nav.php",
+			"settings":
+			{
+				"buffer_size": 2569,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "_content.php",
+			"settings":
+			{
+				"buffer_size": 5842,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<div id=\"page-header\" style=\"margin-bottom: 0;\">\n    <div class=\"container\">\n        <h1>AzKai <small>The Brand</small></h1>\n    </div>\n</div>\n\n<!-- PAGE CONTENT : begin -->\n<div id=\"page-content\">\n    <div class=\"various-content\">\n\n<!-- FEATURES : begin -->\n<? include($_SERVER[DOCUMENT_ROOT] . '/library/includes/features.php'); ?>\n\n<hr class=\"c-divider m-negative-small m-transparent\">\n\n<!-- ABOUT ME : begin -->\n<section class=\"c-section about-me-jumbotron\">\n    <div class=\"section-inner\">\n        <!-- holds about-me bg picture -->\n        <header class=\"section-header textalign-center\">\n            <h2>Hi, I'm Kai!</h2>\n        </header>\n        <div class=\"container\">\n            <div class=\"row\" style=\"display: none\"><div class=\"col-md-offset-5 about-me-picture\"></div></div>\n            <div class=\"row\">\n                <div class=\"col-md-offset-2 col-md-8 textalign-center lead\">\n                    <p>I'm a customer-obsessed <strong>ux designer</strong> and <strong>front-end developer</strong> from Tampa, Florida. I strive to polish the eye-popping, seat-gripping experience that inherently exists within each brand.</p>\n                </div>\n            </div><!-- end row -->\n            <div class=\"row textalign-center\" style=\"display: none\">\n                <a href=\"\" class=\"c-button\">More about Me</a>\n            </div>\n        </div>\n\n    </div>\n</section>\n<!-- ABOUT ME : end -->\n\n<!-- DIVIDER : begin -->\n<hr class=\"c-divider m-medium m-transparent\" style=\"display: none\">\n<!-- DIVIDER : end -->\n\n<!-- BLOG SECTION : begin -->\n<section class=\"c-section\" style=\"display: none;\">\n    <div class=\"section-inner\">\n\n    <header class=\"section-header textalign-center\">\n        <h2>Blog</h2>\n    </header>\n\n        <!-- BLOG : begin -->\n        <div class=\"c-blog\">\n\n            <!-- ITEM LIST : begin -->\n            <div class=\"item-list\">\n\n                <!-- BLOG ARTICLE : begin -->\n                <article class=\"text cat-space\">\n                    <div class=\"article-inner\">\n                        <a href=\"blog-post-image.html\" class=\"blog-link\"> \n\n                            <!-- ARTICLE HEADER : begin -->\n                            <header class=\"article-header\">\n                                <span class=\"article-date\">August 21, 2014</span>\n                                <h2 class=\"article-title\">Far far away, behind the word mountains</h2>\n                            </header>\n                            <!-- ARTICLE HEADER : end -->\n\n                            <!-- ARTICLE CONTENT : begin -->\n                            <div class=\"article-content various-content\">\n                                <p class=\"lead\">Far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country.</p>\n                            </div>\n                            <!-- ARTICLE CONTENT : end -->\n\n                        </a>\n                    </div>\n                </article>\n                <!-- BLOG ARTICLE END -->\n\n                <!-- BLOG ARTICLE : begin -->\n                <article class=\"text cat-space\">\n                    <div class=\"article-inner\">\n                        <a href=\"blog-post-image.html\" class=\"blog-link\"> \n\n                            <!-- ARTICLE HEADER : begin -->\n                            <header class=\"article-header\">\n                                <span class=\"article-date\">August 21, 2014</span>\n                                <h2 class=\"article-title\">Far far away, behind the word mountains</h2>\n                            </header>\n                            <!-- ARTICLE HEADER : end -->\n\n                            <!-- ARTICLE CONTENT : begin -->\n                            <div class=\"article-content various-content\">\n                                <p class=\"lead\">Far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country.</p>\n                            </div>\n                            <!-- ARTICLE CONTENT : end -->\n\n                        </a>\n                    </div>\n                </article>\n                <!-- BLOG ARTICLE END -->\n\n                <!-- BLOG ARTICLE : begin -->\n                <article class=\"text cat-space\">\n                    <div class=\"article-inner\">\n                        <a href=\"blog-post-image.html\" class=\"blog-link\"> \n\n                            <!-- ARTICLE HEADER : begin -->\n                            <header class=\"article-header\">\n                                <span class=\"article-date\">August 21, 2014</span>\n                                <h2 class=\"article-title\">Far far away, behind the word mountains</h2>\n                            </header>\n                            <!-- ARTICLE HEADER : end -->\n\n                            <!-- ARTICLE CONTENT : begin -->\n                            <div class=\"article-content various-content\">\n                                <p class=\"lead\">Far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country.</p>\n                            </div>\n                            <!-- ARTICLE CONTENT : end -->\n\n                        </a>\n                    </div>\n                </article>\n                <!-- BLOG ARTICLE END -->\n\n                <!-- BLOG ARTICLE : begin -->\n                <article class=\"text cat-space\">\n                    <div class=\"article-inner\">\n                        <a href=\"blog-post-image.html\" class=\"blog-link\"> \n\n                            <!-- ARTICLE HEADER : begin -->\n                            <header class=\"article-header\">\n                                <span class=\"article-date\">August 21, 2014</span>\n                                <h2 class=\"article-title\">Far far away, behind the word mountains</h2>\n                            </header>\n                            <!-- ARTICLE HEADER : end -->\n\n                            <!-- ARTICLE CONTENT : begin -->\n                            <div class=\"article-content various-content\">\n                                <p class=\"lead\">Far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country.</p>\n                            </div>\n                            <!-- ARTICLE CONTENT : end -->\n\n                        </a>\n                    </div>\n                </article>\n                <!-- BLOG ARTICLE END -->\n\n            </div>\n            <!-- ITEM LIST : end -->\n\n        </div>\n        <!-- BLOG : end -->\n\n    </div>\n</section>\n<!-- BLOG SECTION : end -->\n\n        <!-- END PARALAX DIV -->\n        <? include($_SERVER[DOCUMENT_ROOT] . '/library/includes/reputation.php'); ?>\n        <!-- CONNECT W/ ME : begin -->\n        <? include($_SERVER[DOCUMENT_ROOT] . '/library/includes/connect.php'); ?>\n        <!-- CONNECT : end -->\n\n\n    </div>\n</div>\n<!-- PAGE CONTENT : end -->\n",
+			"file": "brand/_content.php",
+			"file_size": 7827,
+			"file_write_time": 130721150679438829,
+			"settings":
+			{
+				"buffer_size": 7655,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "library/css/style.css",
+			"settings":
+			{
+				"buffer_size": 243955,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "about/_content.php",
+			"settings":
+			{
+				"buffer_size": 9901,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 60.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Install",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 386.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,sys; exec(\"if sys.version_info < (3,) or os.name != 'nt': raise OSError('This code is for Windows ST3 only!')\"); pr='Preferences.sublime-settings'; ip='ignored_packages'; n='Package Control'; s=sublime.load_settings(pr); ig=s.get(ip); ig.append(n); s.set(ip,ig); sublime.save_settings('Preferences.sublime-settings'); pf=n+'.sublime-package'; urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler())); by=urllib.request.urlopen('https://packagecontrol.io/'+pf.replace(' ','%20')).read(); open(os.path.join(sublime.installed_packages_path(),pf),'wb').write(by); ig.remove(n); s.set(ip,ig); sublime.save_settings(pr); print('Package Control: 3.0.0 upgrade successful!')",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/library",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/library/css",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/library/css/skin"
+	],
+	"file_history":
+	[
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/sftp-config.json",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/library/css/custom.css",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/library/includes/nav.php",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/library/css/style.css",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/library/css/import/font-awesome.css",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/ajax/contact-form.php",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/contact/_content.php",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/browserconfig.xml",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/library/includes/meta.php",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/contact/contact.html",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/library/includes/head.php",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/library/includes/view.php",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/contact/index.php",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/library/includes/connect.php",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/about/index.php",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/library/includes/end.php",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/library/includes/reputation.php",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/about/_content.php",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/_content.php",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/about/_content-old.php",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/library/css/skin/default.css",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/library/includes/header.php",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io-template-files/about-us.html",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/index.php",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/library/includes/scripts.js",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io-template-files/index-old.php",
+		"/C/Users/Admin/Dropbox/Websites/DG_HD/_private/nav.php",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/library/includes/bottom-panel.php",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/library/includes/footer.php",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/library/includes/getURL.php",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/__php__.php",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/library/includes/features.php",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/library/js/scripts.js",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/library/includes/rootDir.php",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/404.php",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/library/includes/side-menu.php",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/search-results.html",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/typography.html",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/library/js/analytics.js",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/sftp-config.json",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/gulpfile.js",
+		"/C/Users/Admin/Dropbox/Websites/azkai-old-template/gulpfile.js",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/library/css/style.scss",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/gulpfile-old.js",
+		"/C/Users/Admin/Dropbox/Websites/azkai-old-template/app.js",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/images/azkai-fav.svg",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/aside.php",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/library/css/skin/default.scss",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/home-blog.html",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/app.js",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/HTML/index.html",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.com/sftp-config.json",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.io/google47e5a44510667458.html",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.com/robots.txt",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.com/google47e5a44510667458.html",
+		"/C/Users/Admin/Dropbox/Websites/AzKai.com/googlefe0a8e85903c1869.html",
+		"/C/Users/Admin/Dropbox/Websites/AzKai/HTML/library/css/skin/default.scss",
+		"/C/Users/Admin/Dropbox/Websites/AzKai/HTML/library/css/custom.css",
+		"/C/Users/Admin/Dropbox/Websites/AzKai/HTML/aside.php",
+		"/C/Users/Admin/Dropbox/Websites/AzKai/HTML/home-blog.html",
+		"/C/Users/Admin/Dropbox/Websites/AzKai/HTML/index.html",
+		"/C/Users/Admin/Dropbox/Websites/AzKai/HTML/library/css/style.scss",
+		"/C/Users/Admin/Dropbox/Websites/AzKai/HTML/sftp-config.json",
+		"/C/Users/Admin/Dropbox/Websites/AzKai/HTML/robots.txt",
+		"/C/Users/Admin/Dropbox/Websites/AzKai/gulpfile.js",
+		"/C/Users/Admin/Dropbox/Websites/AzKai/HTML/library/css/skin/default.css",
+		"/C/Users/Admin/Dropbox/Websites/AzKai/HTML/library/css/custom (Chelsi ByRoade's conflicted copy 2015-03-14).css",
+		"/C/Users/Admin/Dropbox/Websites/AzKai/app.js",
+		"/C/Users/Admin/Dropbox/Websites/azkai-old-template/package.json",
+		"/C/Users/Admin/Dropbox/Websites/AzKai/package.json",
+		"/C/Users/Admin/Dropbox/Websites/rpguide/beta/_private/includes/nav.php",
+		"/C/Users/Admin/Dropbox/Websites/rpguide/beta/css/main.css",
+		"/C/Users/Admin/Dropbox/Websites/rpguide/beta/img/rawr.svg",
+		"/C/Users/Admin/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Admin/Dropbox/Websites/rpguide/beta/index.php",
+		"/C/Windows/System32/Magnify.exe",
+		"/C/Users/Admin/Dropbox/Websites/rpguide/beta/css/stylesheet.css",
+		"/C/Users/Admin/Dropbox/Websites/rpguide/beta/_private/includes/styles.htm",
+		"/C/Users/Admin/Dropbox/Websites/rpguide/beta/_private/includes/meta.htm",
+		"/C/Users/Admin/Dropbox/Websites/rpguide/beta/css/styles.css",
+		"/C/Users/Admin/Dropbox/Websites/rpguide/beta/CMV/view/global/css/main.css",
+		"/C/Users/Admin/Dropbox/Websites/CaseStudies/tagliatelle/web/404.html",
+		"/C/Users/Admin/Dropbox/Websites/CaseStudies/tagliatelle/web/css/main.css",
+		"/C/Users/Admin/Dropbox/Websites/rpguide/beta/css/normalize.css",
+		"/C/Users/Admin/Dropbox/Websites/rpguide/beta/css/grid.css",
+		"/C/Users/Admin/Dropbox/Websites/rpguide/beta/_private/includes/scripts.htm",
+		"/C/Users/Admin/Dropbox/Websites/rpguide/sftp-config.json",
+		"/C/Users/Admin/Dropbox/Websites/rpguide/beta/robots.txt",
+		"/C/Users/Admin/Dropbox/Websites/rpguide/beta/rpguide.sublime-project",
+		"/C/Users/Admin/Dropbox/Websites/rpguide/index.php",
+		"/C/Users/Admin/Dropbox/Websites/CaseStudies/tagliatelle/web/css/bootstrap.css",
+		"/C/Users/Admin/Dropbox/Websites/CaseStudies/tagliatelle/web/css/bootstrap.min.css",
+		"/C/Users/Admin/Dropbox/Websites/CaseStudies/tagliatelle/web/sftp-config.json",
+		"/C/Users/Admin/Dropbox/Websites/DG2/sftp-config.json",
+		"/C/Users/Admin/Dropbox/Websites/DG2/_private/subnav.php",
+		"/C/Users/Admin/Dropbox/Websites/DG2/contact-us/index.php",
+		"/C/Users/Admin/Dropbox/Websites/DG2/_private/prefooter.php",
+		"/C/Users/Admin/Dropbox/Websites/DG2/tampa-web-design.php",
+		"/C/Users/Admin/Dropbox/Websites/DG2/_private/nav.php",
+		"/C/Users/Admin/Dropbox/Websites/DG2/_private/head.php",
+		"/C/Users/Admin/Dropbox/Websites/DG2/_private/footer.php",
+		"/C/Users/Admin/Dropbox/Websites/DG2/_private/theme.css",
+		"/C/Users/Admin/Dropbox/Websites/DG2/_private/theme4.css",
+		"/C/Users/Admin/Dropbox/Websites/DG2/font-awesome/css/font-awesome.css",
+		"/C/Users/Admin/Dropbox/Websites/DG2/services/seo.php",
+		"/C/Users/Admin/Dropbox/Websites/DG2/services/user-experience.php",
+		"/C/Users/Admin/Dropbox/Websites/DG2/services/website-analytics.php",
+		"/C/Users/Admin/Dropbox/Websites/DG2/services/website-design.php",
+		"/C/Users/Admin/Dropbox/Websites/DG2/services/website-development.php",
+		"/C/Users/Admin/Dropbox/Websites/DG2/styles/font-awesome.css",
+		"/C/Users/Admin/Dropbox/Websites/DG2/styles/font-awesome.min.css",
+		"/C/Users/Admin/Dropbox/Websites/DG2/styles/style.css",
+		"/C/Users/Admin/Dropbox/Websites/DG2/about-us.htm",
+		"/C/Users/Admin/Dropbox/Websites/DG2/index.php",
+		"/C/Users/Admin/Dropbox/Websites/DG2/services/index.php",
+		"/C/Users/Admin/Dropbox/Websites/DG2/_private/style.css",
+		"/C/Users/Admin/Dropbox/Websites/templates/full-width/bigwig/demo.themeboutique.com/drupal/bigwig/index.html",
+		"/C/Users/Admin/Dropbox/Websites/DG2/font/fontello/css/fontello-codes.css",
+		"/C/Users/Admin/Dropbox/Websites/DG2/font/fontello/css/fontello.css",
+		"/C/Users/Admin/Dropbox/Websites/Spathelf/nav.php",
+		"/C/Users/Admin/Dropbox/Websites/Spathelf/css/theme.css",
+		"/C/Users/Admin/Dropbox/Websites/Spathelf/footer.php",
+		"/C/Users/Admin/Dropbox/Websites/Spathelf/head.php",
+		"/C/Users/Admin/Dropbox/Websites/Spathelf/services-list.php",
+		"/C/Users/Admin/Dropbox/Websites/Spathelf/css/skin.css",
+		"/C/Users/Admin/Dropbox/Websites/Spathelf/index.php",
+		"/C/Users/Admin/Dropbox/Websites/Spathelf/about.php",
+		"/C/Users/Admin/Dropbox/Websites/Spathelf/contact.php"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"<open file>",
+			"C:\\Users\\Admin\\Dropbox\\Websites\\CaseStudies\\tagliatelle\\web",
+			"C:\\Users\\Admin\\Dropbox\\Websites\\DG2\\contact-us\\index.php",
+			"C:\\Users\\Admin\\Dropbox\\Websites\\DG2",
+			"wall.html",
+			"",
+			"./nod.js",
+			".",
+			"",
+			"C:\\Users\\Admin\\Dropbox\\Websites\\DG2"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"ico ",
+			"ico",
+			"$required_fields_error_msg",
+			"Please fill in",
+			"resume",
+			"images",
+			"e",
+			"yrs",
+			"100",
+			"3",
+			"p",
+			"logo",
+			".logo",
+			"images",
+			"images/",
+			"nav",
+			"$accent-1",
+			"header-branding-inner",
+			"header-branding",
+			"header-branding-inner",
+			"[",
+			"col-md-2 ",
+			"connect",
+			"blog",
+			"#FFF",
+			"quote",
+			"main-si",
+			"m-large",
+			"$body",
+			"brows",
+			"({\n",
+			"various-",
+			"owl",
+			"LubosBudkovsky",
+			"twitter",
+			"col-sm-1 ",
+			"sm",
+			"3",
+			"a .article-title h2 { color: $accent-1; }",
+			"a .article-title h2",
+			"article-tit",
+			"a",
+			"#ec587a",
+			"ec587a",
+			"b3d4fc",
+			"\"Open Sans\"",
+			"starter",
+			"wordpress",
+			"/c/beta",
+			"7",
+			"[class*=\" icon-\"]",
+			".module_line .shortcode_promoblock h3",
+			"footer",
+			".module_icon",
+			".ico, .shortcode_iconbox .ico span",
+			".call_us .ico, .ico, .shortcode_iconbox .ico span",
+			".logo",
+			".png",
+			"img/pictures",
+			".jpg",
+			"budget",
+			"alert-required",
+			"$",
+			".fa",
+			"../font",
+			"-webkit-transition:",
+			".btn-success:hover",
+			"#2ba639",
+			"#62c462",
+			"#51a351",
+			"#52a452",
+			"btn-success",
+			"style=\"color: #00394d;\"",
+			"#1e7a98",
+			"#84bd32",
+			"images/skin/",
+			"/drupal/bigwig/sites/all/themes/bigwig/img",
+			"-icon-font",
+			"/drupal/bigwig/sites/all/themes/bigwig/font",
+			"entypo-social",
+			"/drupal/bigwig/sites/all/themes/bigwig/font",
+			"/drupal/bigwig/sites/all/themes/bigwig",
+			"#84bd32",
+			"#003e52",
+			"#84bd32",
+			"placeholder=\"Search...\"",
+			"<input title=\"Enter the terms you wish to search for.\" type=\"text\" id=\"edit-search-block-form--2\" name=\"search_block_form\" value=\"\" size=\"15\" maxlength=\"128\" class=\"form-text\" placeholder=\"Search...\">",
+			"font-family",
+			"navbar-brand",
+			"border:1px solid transparent",
+			"border: 1px solid transparent",
+			"navbar",
+			"dropdown",
+			"DG2",
+			"1",
+			"email@domain.com",
+			"Lato",
+			"#F00C47",
+			"lato",
+			":hover",
+			"font-size"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"036a96",
+			"Merriweather",
+			"750-2000",
+			"2000-6000",
+			"",
+			".jpg",
+			"img/gallery",
+			".png",
+			"prod",
+			"red-required",
+			"jQuery",
+			"/c/beta/font",
+			"#3bb644",
+			"#2ba639",
+			"#17993e",
+			"#00394d",
+			"#9ad941",
+			"images/",
+			"/c/beta/images",
+			"",
+			"/c/beta/font",
+			"#00394d",
+			"#9ad941"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "library/includes/nav.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2569,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								665,
+								665
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "_content.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5842,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								5842
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "brand/_content.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7655,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1267,
+								1267
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "library/css/style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 243955,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								199873,
+								199873
+							],
+							[
+								200433,
+								200433
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 122091.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "about/_content.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9901,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								29,
+								365
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 131.0
+	},
+	"pinned_build_system": "",
+	"project": "azkaiio.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 239.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

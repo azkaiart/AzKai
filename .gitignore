@@ -21,9 +21,9 @@ $RECYCLE.BIN/
 # Files & Folders
 # =========================
 
-node_modules/
-Documentation/
-Development/
+/node_modules/
+/Documentation/
+/Development/
 
 # =========================
 # Operating System Files

@@ -1,4 +1,3 @@
-<? include($_SERVER[DOCUMENT_ROOT] .'/library/includes/getURL.php'); ?>
 <header id="header" class="
 <?php 
 	if($pageVar=="http://azkai.io/" || $pageVar=="http://azkai.io/index.php") { echo "m-large m-enable-fixed m-fixed-bg"; }

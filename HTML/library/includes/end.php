@@ -1,4 +1,3 @@
-					</div><!-- various-content : end -->
 				</div><!-- page-content : end -->
 			</div>
 			<!-- CORE : end -->
@@ -13,6 +12,10 @@
 
 		<!-- Google Analytics -->
 		<? include($_SERVER[DOCUMENT_ROOT] . '/library/js/analytics.js'); ?>
+
+		<!-- If Portfolio, add our scripts. -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.2/handlebars.min.js"></script>
+		<?php if(strstr($pageVar,'portfolio')){ include($_SERVER[DOCUMENT_ROOT] . '/library/js/behance.js'); } ?>
 
 	</body>
 </html>

@@ -443,63 +443,6 @@
 	}
 
 	/* -------------------------------------------------------------------------
-		DRIBBBLE FEED
-	------------------------------------------------------------------------- */
-
-	if ( ! $.fn.lsvrDribbbleFeed ) {
-		$.fn.lsvrDribbbleFeed = function() {
-		// REQUIRED PLUGINS
-		if ( $.fn.lsvrImagesLoaded && $.jribbble ) {
-
-			if ( $(this).find( '.widget-feed' ).length < 1 ) {
-				$(this).append( '<div class="widget-feed"></div>' );
-			}
-			var $self = $(this),
-			feed = $(this).find( '.widget-feed' ),
-			feedId = $(this).data( 'id' ),
-			feedLimit = $(this).data( 'limit' );
-
-			if ( isNaN( feedLimit ) || feedLimit < 1 ) {
-				feedLimit = 1;
-			}
-			feed.html( '<ul class="image-list clearfix"></ul>' );
-
-			// GET THE FEED
-			$.jribbble.getShotsByPlayerId( feedId, function ( playerShots ) {
-
-				// get number of images to be shown
-				var numberOfImages = feedLimit;
-				if ( playerShots.shots.length < feedLimit ){
-					numberOfImages = playerShots.shots.length;
-				}
-
-				// INSERT ITEMS
-				var i;
-				for( i = 0; i < numberOfImages; i++ ) {
-					feed.find( 'ul' ).append( '<li class="image-list-item"><a href="' + playerShots.shots[i].url + '" style="background-image: url(' + playerShots.shots[i].image_teaser_url + ');" title="' + playerShots.shots[i].title + '" rel="external"><img src="' + playerShots.shots[i].image_teaser_url + '" alt="' + playerShots.shots[i].title + '"></a></li>' );
-				}
-				// IMAGES LOADED
-				$self.lsvrImagesLoaded(function(){
-					$self.find( '.c-loading-anim' ).fadeOut( 300, function(){
-						$self.find( '.widget-feed' ).fadeIn( 300, function(){
-							$self.removeClass( 'loading' );
-							$self.find( '.image-list > li' ).each(function(){
-								var item = $(this),
-								itemIndex = $(this).index();
-								setTimeout( function(){
-									item.fadeIn( 300 );
-								}, itemIndex * 100 );
-							});
-						});
-					});
-				});
-
-			}, { page: 1, per_page: feedLimit } );
-
-		}};
-	}
-
-	/* -------------------------------------------------------------------------
 		FIELD VALIDATION
 	------------------------------------------------------------------------- */
 
@@ -560,64 +503,6 @@
 			return valid;
 
 		};
-	}
-
-	/* -------------------------------------------------------------------------
-		FLICKR FEED
-	------------------------------------------------------------------------- */
-
-	if ( ! $.fn.lsvrFlickrFeed ) {
-		$.fn.lsvrFlickrFeed = function() {
-		// REQUIRED PLUGINS
-		if ( $.fn.lsvrImagesLoaded ) {
-
-			if ( $(this).find( '.widget-feed' ).length < 1 ) {
-				$(this).append( '<div class="widget-feed"></div>' );
-			}
-			var $self = $(this),
-			feed = $(this).find( '.widget-feed' ),
-			feedId = $(this).data( 'id' ),
-			feedLimit = $(this).data( 'limit' );
-
-			if ( isNaN( feedLimit ) || feedLimit < 1 ) {
-				feedLimit = 1;
-			}
-			feed.html( '<ul class="image-list clearfix"></ul>' );
-
-			// GET THE FEED
-			$.getJSON( 'http://api.flickr.com/services/feeds/photos_public.gne?id=' + feedId + '&lang=en-us&format=json&jsoncallback=?', function(data){
-
-				// get number of images to be shown
-				var numberOfImages = feedLimit;
-				if ( data.items.length < feedLimit ) {
-					numberOfImages = data.items.length;
-				}
-
-				// INSERT ITEMS
-				var i;
-				for ( i = 0; i < numberOfImages; i++ ){
-					feed.find( 'ul' ).append( '<li class="image-list-item"><a href="' + data.items[i].link + '" style="background-image: url(' + data.items[i].media.m + ');" rel="external"><img class="image-list-thumb" src="' + data.items[i].media.m + '" alt="' + data.items[i].title + '" style="display: none;"></a></li>' );
-				}
-
-				// IMAGES LOADED
-				$self.lsvrImagesLoaded(function(){
-					$self.find( '.c-loading-anim' ).fadeOut( 300, function(){
-						$self.find( '.widget-feed' ).fadeIn( 300, function(){
-							$self.removeClass( 'loading' );
-							$self.find( '.image-list > li' ).each(function(){
-								var item = $(this),
-								itemIndex = $(this).index();
-								setTimeout( function(){
-									item.fadeIn( 300 );
-								}, itemIndex * 100 );
-							});
-						});
-					});
-				});
-
-			});
-
-		}};
 	}
 
 	/* -------------------------------------------------------------------------
@@ -777,62 +662,6 @@
 			});
 
 		};
-	}
-
-	/* -------------------------------------------------------------------------
-		INSTAGRAM FEED
-	------------------------------------------------------------------------- */
-
-	if ( ! $.fn.lsvrInstagramFeed ) {
-		$.fn.lsvrInstagramFeed = function() {
-		// REQUIRED PLUGINS
-		if ( $.fn.lsvrImagesLoaded && $.fn.embedagram ) {
-
-			if ( $(this).find( '.widget-feed' ).length < 1 ) {
-				$(this).append( '<div class="widget-feed"></div>' );
-			}
-			var $self = $(this),
-			feed = $(this).find( '.widget-feed' ),
-			feedId = $(this).data( 'id' ),
-			feedLimit = $(this).data( 'limit' );
-
-			if ( isNaN( feedLimit ) || feedLimit < 1 ) {
-				feedLimit = 1;
-			}
-			feed.html( '<ul class="image-list clearfix"></ul>' );
-
-			// GET THE FEED
-			feed.find( 'ul.image-list' ).embedagram({
-				instagram_id: feedId,
-				limit: feedLimit,
-				success: function(){
-					feed.find( 'a' ).each(function(){
-						$(this).css( 'background-image', 'url(' + $(this).find( 'img' ).attr( 'src' ) + ')' );
-						if ( $(this).find( 'img' ).attr( 'title' ) ) {
-							$(this).find( 'img' ).removeAttr( 'title' );
-						}
-					});
-
-					// IMAGES LOADED
-					$self.lsvrImagesLoaded(function(){
-						$self.find( '.c-loading-anim' ).fadeOut( 300, function(){
-							$self.find( '.widget-feed' ).fadeIn( 300, function(){
-								$self.removeClass( 'loading' );
-								$self.find( '.image-list > li' ).each(function(){
-									var item = $(this),
-									itemIndex = $(this).index();
-									setTimeout( function(){
-										item.fadeIn( 300 );
-									}, itemIndex * 100 );
-								});
-							});
-						});
-					});
-
-				}
-			});
-
-		}};
 	}
 
 	/* ---------------------------------------------------------------------

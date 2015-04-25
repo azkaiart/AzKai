@@ -1,3 +1,5 @@
+<? include($_SERVER[DOCUMENT_ROOT] .'/library/includes/getURL.php'); ?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -15,9 +17,8 @@
 		<main id="body">
 
 			<!-- WRAPPER : begin -->
-			<div id="wrapper" class="m-large-header">
+			<div id="wrapper">
 
 				<!-- CORE : begin -->
 				<div id="core">
 					<div id="page-content">
-						<div class="various-content">

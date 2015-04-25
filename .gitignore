@@ -28,6 +28,7 @@ app.js
 gulpfile.js
 gulpfile-old.js
 sftp-config.json
+/HTML/sftp-config.json
 
 # =========================
 # Operating System Files

@@ -30,7 +30,6 @@
 					<ul>
 <!-- 						<li class="<?php if($pageVar=="http://stage.azkai.io/" || $pageVar=="http://stage.azkai.io/index.php"){ echo "m-active"; } ?>"><a href="/">Home</a></li>
 						 -->						<li class="<?php if(strstr($pageVar,'about')){ echo "m-active"; } ?>"><a href="/about" title="Kai ByRoade &mdash; AzKai Art">The Artist</a></li>
-						<li class="<?php if(strstr($pageVar,'brand')){ echo "m-active"; } ?>"><a href="/brand" title="AzKai Art &mdash; Pixel Art, UX Design &amp; Front-End Development">The Brand</a></li>
 						<!-- <li><a href="index.html">Blog</a></li> -->
 						<li class="<?php if(strstr($pageVar,'portfolio')){ echo "m-active"; } ?>"><a href="/portfolio" title="UX Design, Web Design &amp; Front-End Development from AzKai's Portfolio">The Pixels</a></li>
 						<li class="<?php if(strstr($pageVar,'contact')){ echo "m-active"; } ?>"><a href="/contact" title="Connect with AzKai (Kai ByRoade)">Let's Chat!</a></li>
